@@ -77,7 +77,7 @@ function Index() {
             <p className="hero-lead">Um lugar para viver com acolhimento, cuidado profissional e momentos que fazem bem. Cada pessoa é recebida com respeito, atenção e muito carinho.</p>
             <div className="hero-actions">
               <button className="btn btn-primary" onClick={() => goWhatsapp("conversar sobre meu caso")}><MessageCircle size={18}/> Converse com nossa equipe</button>
-              <a className="btn btn-outline" href="#cuidados">Conheça nossa casa <ArrowRight size={17}/></a>
+              <button className="btn btn-outline" onClick={() => goWhatsapp("agendar uma visita ao residencial")}>Agendar uma visita <ArrowRight size={17}/></button>
             </div>
             <div className="hero-trust"><span><Check size={15}/> Atenção individual</span><span><Check size={15}/> Atendimento humanizado</span><span><Check size={15}/> Cuidado especializado</span></div>
           </div>
@@ -88,7 +88,12 @@ function Index() {
 
       <section className="section intro-section" id="sobre"><div className="container intro-grid"><div className="intro-illustration maria-profile-photo photo-placeholder" role="img" aria-label="Espaço reservado para foto do residencial"><span>FOTO</span><small>Foto do residencial</small></div><div className="intro-copy"><span className="eyebrow">SEJA BEM-VINDO À NOSSA CASA</span><h2>Uma rotina com cuidado, <em>respeito e afeto.</em></h2><p>Sabemos que escolher um residencial para alguém querido é uma decisão importante. Nosso compromisso é oferecer um ambiente acolhedor, com uma equipe preparada para acompanhar a rotina e olhar para cada pessoa com atenção e dignidade.</p><p>Aqui, o cuidado vai além das necessidades diárias: valorizamos a convivência, os vínculos, o conforto e os pequenos momentos que tornam cada dia especial.</p><button className="btn btn-primary" onClick={() => goWhatsapp("conhecer o residencial")}><MessageCircle size={18}/> Conhecer o residencial</button></div></div></section>
 
-      <section className="section pain-section"><div className="container narrow center"><span className="eyebrow">NOSSO JEITO DE CUIDAR</span><h2>Cuidado que respeita a história e a <em>individualidade.</em></h2><p>Mais do que oferecer assistência, queremos que cada residente se sinta acolhido, respeitado e parte de uma família. A rotina combina acompanhamento profissional, convivência e atenção aos detalhes.</p><div className="check-list centered-list"><div><Check size={17}/><span>Atenção de uma equipe presente e cuidadosa.</span></div><div><Check size={17}/><span>Atividades e convivência para tornar os dias mais leves.</span></div><div><Check size={17}/><span>Um ambiente acolhedor, com respeito aos hábitos e à história de cada pessoa.</span></div></div><button className="btn btn-primary" onClick={() => goWhatsapp("tirar dúvidas sobre nossos cuidados")}><MessageCircle size={18}/> Quero tirar minhas dúvidas</button></div></section>
+      <section className="section pain-section"><div className="container narrow center"><span className="eyebrow">NOSSO JEITO DE CUIDAR</span><h2>Cuidado que respeita a história e a <em>individualidade.</em></h2><p>Mais do que oferecer assistência, queremos que cada residente se sinta acolhido, respeitado e parte de uma família. A rotina combina acompanhamento profissional, convivência e atenção aos detalhes.</p><div className="care-values-list">
+  <article><span>01</span><div><h3>Atenção individual</h3><p>Respeito à história, aos hábitos e às necessidades de cada residente.</p></div><Heart size={22}/></article>
+  <article><span>02</span><div><h3>Equipe presente</h3><p>Acompanhamento cuidadoso e apoio profissional ao longo do dia.</p></div><HeartPulse size={22}/></article>
+  <article><span>03</span><div><h3>Convivência e bem-estar</h3><p>Atividades e momentos compartilhados para deixar a rotina mais leve.</p></div><Users size={22}/></article>
+  <article><span>04</span><div><h3>Ambiente acolhedor</h3><p>Conforto, segurança e carinho para que cada pessoa se sinta em casa.</p></div><House size={22}/></article>
+</div><button className="btn btn-primary" onClick={() => goWhatsapp("agendar uma visita para conhecer nossos cuidados")}><MessageCircle size={18}/> Agendar uma visita</button></div></section>
 
       <section className="section procedures-section" id="cuidados"><div className="container"><div className="section-heading center"><span className="eyebrow">CUIDADO EM CADA DETALHE</span><h2>Uma equipe presente para <em>cuidar de verdade.</em></h2><p>Conheça os profissionais e serviços que apoiam o bem-estar, a rotina e as necessidades individuais de quem mora conosco.</p></div><div className="procedure-window"><div className="procedure-track">{[...services,...services].map(({title,text,image,icon:Icon},i)=><article className="procedure-card maria-service-card" key={`${title}-${i}`}><img className="procedure-photo" src={image} alt={title} loading={i<services.length?"eager":"lazy"}/><div className="procedure-content"><div className="procedure-icon"><Icon size={21}/></div><h3>{title}</h3><p>{text}</p></div></article>)}</div></div><div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("conhecer os serviços do residencial")}><MessageCircle size={18}/> Conhecer os serviços</button></div></div></section>
 
@@ -97,26 +102,6 @@ function Index() {
 
 
       <section className="section how-section" id="como-funciona"><div className="container"><div className="section-heading center"><span className="eyebrow">NOSSA ROTINA</span><h2>Cuidado e carinho em <em>cada etapa do dia.</em></h2><p>Uma rotina que valoriza o conforto, a convivência, a atenção profissional e os momentos compartilhados.</p></div><div className="steps-grid">{[["01","Acolhimento","Conhecemos a pessoa, sua história e as necessidades de cuidado."],["02","Avaliação","A equipe acompanha a rotina com responsabilidade e carinho."],["03","Plano individual","Atividades e momentos em grupo incentivam vínculos e bem-estar."],["04","Acompanhamento","Atenção aos detalhes para apoiar uma vida com mais conforto."]].map(([n,t,d])=><article className="step-card" key={n}><span className="step-number">{n}</span><div><h3>{t}</h3><p>{d}</p></div></article>)}</div><div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("conversar sobre uma visita")}><MessageCircle size={18}/> Iniciar uma conversa</button></div></div></section>
-
-<section className="section video-testimonials-section" id="depoimentos-em-video">
-        <div className="container">
-          <div className="section-heading center">
-            <span className="eyebrow">CONHEÇA NOSSA CASA</span>
-            <h2>Vídeos que aproximam você do nosso <em>dia a dia.</em></h2>
-            <p>Adicione aqui vídeos reais do residencial, dos ambientes e das atividades. Mostre às famílias um pouco do nosso jeito de acolher.</p>
-          </div>
-          <div className="video-testimonials-grid">
-            {[
-              ["Conheça o residencial","Vídeo do residencial a adicionar"],
-              ["Nossos ambientes","Vídeo do ambiente a adicionar"],
-              ["Atividades e convivência","Vídeo das atividades a adicionar"]
-            ].map(([title,caption])=><article className="video-testimonial-card" key={title}>
-              <div className="video-testimonial-placeholder"><span className="video-play" aria-hidden="true">▶</span><span className="video-placeholder-label">VÍDEO</span></div>
-              <div className="video-testimonial-copy"><h3>{title}</h3><p>{caption}</p></div>
-            </article>)}
-          </div>
-        </div>
-      </section>
 
 <section className="section maria-reviews-section aconchego-welcome-section" id="convivencia">
         <div className="container">
@@ -130,14 +115,15 @@ function Index() {
             <article><span>☀</span><h3>Dias com propósito</h3><p>Atividades semanais e momentos de convivência que estimulam a participação.</p></article>
             <article><span>⌂</span><h3>Tranquilidade para a família</h3><p>Uma equipe presente e uma rotina pensada para oferecer cuidado e acolhimento.</p></article>
           </div>
+          <div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("agendar uma visita ao residencial")}><MessageCircle size={18}/> Agendar uma visita</button></div>
         </div>
       </section>
 
-      <section className="section aconchego-gallery-section" id="ambientes"><div className="container"><div className="section-heading center"><span className="eyebrow">CONHEÇA NOSSA CASA</span><h2>Ambientes para viver com <em>conforto e acolhimento.</em></h2><p>Um espaço para conviver, descansar e criar boas lembranças. As imagens são ilustrativas e podem ser substituídas por fotos reais do residencial.</p></div><div className="aconchego-gallery-grid">{[
+      <section className="section aconchego-gallery-section" id="ambientes"><div className="container"><div className="section-heading center"><span className="eyebrow">CONHEÇA NOSSA CASA</span><h2>Ambientes para viver com <em>conforto e acolhimento.</em></h2><p>Conheça alguns ambientes que fazem parte de uma rotina de conforto, convivência e acolhimento.</p></div><div className="aconchego-gallery-window"><div className="aconchego-gallery-track">{[
  {title:"Espaços de convivência",image:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85"},
  {title:"Conforto no dia a dia",image:"https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85"},
  {title:"Ambientes acolhedores",image:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85"}
- ].map(item=><article className="aconchego-gallery-card" key={item.title}><img src={item.image} alt={item.title} loading="lazy"/><h3>{item.title}</h3></article>)}</div><div className="aconchego-amenities"><span><House size={17}/> Pátio amplo e monitorado</span><span><WashingMachine size={17}/> Lavanderia própria</span><span><Tv size={17}/> TV a cabo</span><span><Wifi size={17}/> Wi-Fi</span></div></div></section>
+ ].concat([{title:"Espaços de convivência",image:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85"},{title:"Conforto no dia a dia",image:"https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85"},{title:"Ambientes acolhedores",image:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85"}]).map((item,i)=><article className="aconchego-gallery-card" key={`${item.title}-${i}`}><img src={item.image} alt={item.title} loading="lazy"/><h3>{item.title}</h3></article>)}</div></div><div className="aconchego-amenities"><span><House size={17}/> Pátio amplo e monitorado</span><span><WashingMachine size={17}/> Lavanderia própria</span><span><Tv size={17}/> TV a cabo</span><span><Wifi size={17}/> Wi-Fi</span></div></div></section>
 
       <section className="section benefits-section"><div className="container"><div className="section-heading center"><span className="eyebrow">NOSSO COMPROMISSO</span><h2>Informação clara, acolhimento e <em>responsabilidade.</em></h2></div><div className="benefit-grid maria-benefits"><article><span>01</span><HeartPulse/><h3>Atenção individual</h3><p>Cada residente tem sua história, hábitos e necessidades.</p></article><article><span>02</span><ShieldCheck/><h3>Equipe presente</h3><p>Técnicos disponíveis 24 horas para apoiar a rotina.</p></article><article><span>03</span><Stethoscope/><h3>Convivência</h3><p>Atividades semanais e momentos compartilhados.</p></article><article><span>04</span><CircleCheck/><h3>Estrutura acolhedora</h3><p>Pátio monitorado, lavanderia própria, TV a cabo e Wi-Fi.</p></article></div></div></section>
 
