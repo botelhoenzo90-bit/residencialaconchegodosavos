@@ -78,9 +78,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Jaqueline Teixeira | Estética & Massoterapia" },
-      { name: "description", content: "Estética e massoterapia com atendimento personalizado em Formosa-GO." },
-      { name: "author", content: "Jaqueline Teixeira" },
+      { title: "Residencial Aconchego dos Avós | Mais que um lar, uma família" },
+      { name: "description", content: "Acolhimento, cuidado profissional e convivência no Residencial Aconchego dos Avós." },
+      { name: "author", content: "Residencial Aconchego dos Avós" },
       { name: "google-site-verification", content: "9myn0HdI7aGpUZnVvPyhIOqrxVOLgTJA9XtYO1VNmew" },
       { property: "og:title", content: "Jaqueline Teixeira | Estética & Massoterapia" },
       { property: "og:description", content: "Estética e massoterapia com atendimento personalizado em Formosa-GO." },
