@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import aconchegoLogo from "@/assets/logo-aconchego-dos-avos.png.asset.json";
 import {
   Activity, ArrowRight, Bandage, CalendarDays, Check, ChevronDown, CircleCheck, Heart, HeartHandshake, HeartPulse, House, MessageCircle, ShieldCheck, Stethoscope, Tv, Users, Utensils, WashingMachine, Wifi,
 } from "lucide-react";
@@ -13,6 +14,8 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Mais que um lar, uma família. Cuidado, segurança e acolhimento." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: `https://residencialaconchegodosavos.lovable.app${aconchegoLogo.url}` },
+      { name: "twitter:image", content: `https://residencialaconchegodosavos.lovable.app${aconchegoLogo.url}` },
       { name: "theme-color", content: "#bceee2" },
     ],
   }),
@@ -61,7 +64,7 @@ function Index() {
         <div className="hero-glow"/>
         <div className="container hero-grid">
           <div className="hero-copy center-hero">
-            <div className="hero-brand-logo aconchego-wordmark" aria-label="Residencial Aconchego dos Avós">♡ ACONCHEGO DOS AVÓS</div>
+            <img className="hero-brand-logo aconchego-logo" src={aconchegoLogo.url} alt="Residencial Aconchego dos Avós" width={747} height={939} />
             <h1>Mais que um lar,<br/><em>uma família.</em></h1>
             <p className="hero-lead">Um lugar para viver com acolhimento, cuidado profissional e momentos que fazem bem. Cada pessoa é recebida com respeito, atenção e muito carinho.</p>
             <div className="hero-actions">
@@ -137,7 +140,7 @@ function Index() {
 
       <section className="section final-cta maria-final"><div className="final-glow"/><div className="container narrow center"><span className="eyebrow">VAMOS CONVERSAR?</span><h2>O próximo passo pode ser uma visita. Vamos nos conhecer?</h2><p>Converse com nossa equipe e conheça o Residencial Aconchego dos Avós.</p><button className="btn btn-primary" onClick={() => goWhatsapp("conversar sobre atendimento")}><MessageCircle size={18}/> Falar com a equipe pelo WhatsApp</button></div></section>
 
-      <footer className="footer maria-footer"><div className="container footer-grid"><div className="footer-brand"><div className="footer-logo aconchego-wordmark">♡ ACONCHEGO DOS AVÓS</div><p>Mais que um lar, uma família. Acolhimento, cuidado e respeito em cada etapa da vida.</p></div><div><h4>Navegação</h4><a href="#sobre">Nossa casa</a><a href="#cuidados">Cuidados</a><a href="#como-funciona">Nossa rotina</a><a href="#duvidas">Perguntas frequentes</a></div><div><h4>Contato</h4><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={14}/> +55 51 9902-1329</a><span><ShieldCheck size={14}/> Mais que um lar, uma família</span></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Residencial Aconchego dos Avós.</span><span>Mais que um lar, uma família</span></div></footer>
+      <footer className="footer maria-footer"><div className="container footer-grid"><div className="footer-brand"><img className="footer-logo aconchego-logo" src={aconchegoLogo.url} alt="Residencial Aconchego dos Avós" width={747} height={939} loading="lazy" /><p>Mais que um lar, uma família. Acolhimento, cuidado e respeito em cada etapa da vida.</p></div><div><h4>Navegação</h4><a href="#sobre">Nossa casa</a><a href="#cuidados">Cuidados</a><a href="#como-funciona">Nossa rotina</a><a href="#duvidas">Perguntas frequentes</a></div><div><h4>Contato</h4><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={14}/> +55 51 9902-1329</a><span><ShieldCheck size={14}/> Mais que um lar, uma família</span></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Residencial Aconchego dos Avós.</span><span>Mais que um lar, uma família</span></div></footer>
 
       <a className="floating-wa maria-floating-wa" href={WHATSAPP} target="_blank" rel="noreferrer" aria-label="Falar com a equipe pelo WhatsApp"><img src="/whatsapp-flutuante/image.png" alt="" /><span>WhatsApp</span></a>
     </main>
