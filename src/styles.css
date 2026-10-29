@@ -1008,3 +1008,107 @@ body,.jt-site{background:#fffdf9;color:#25384a}
   .aconchego-overrides .aconchego-welcome-section,
   .aconchego-overrides .aconchego-gallery-section{padding:46px 0!important}
 }
+
+
+/* Identidade visual do Aconchego dos Avós: teal da logomarca no hero e cores sólidas por seção */
+.aconchego-overrides{
+  --aco-brand:#40898e;
+  --aco-brand-dark:#286d72;
+  --aco-ink:#344d4d;
+  --aco-muted:#647575;
+  --aco-line:#dce7e5;
+}
+/* Sessão 1: seguir a logomarca enviada — teal, branco e cinza suave */
+.aconchego-overrides .maria-hero{
+  background:#f7f8f7!important;
+  background-image:none!important;
+  color:#344d4d!important;
+}
+.aconchego-overrides .maria-hero h1,
+.aconchego-overrides .maria-hero h1 em{color:#40898e!important}
+.aconchego-overrides .maria-hero .hero-lead,
+.aconchego-overrides .maria-hero p{color:#596d6d!important}
+.aconchego-overrides .maria-hero .eyebrow{color:#40898e!important}
+.aconchego-overrides .btn-primary,
+.aconchego-overrides .header-cta{
+  background:#40898e!important;
+  background-image:none!important;
+  border-color:#40898e!important;
+  color:#fff!important;
+}
+.aconchego-overrides .btn-primary:hover,
+.aconchego-overrides .header-cta:hover{background:#286d72!important;border-color:#286d72!important}
+.aconchego-overrides .info-marquee{background:#40898e!important;background-image:none!important;color:#fff!important}
+/* Cada seção ganha sua própria cor sólida: alegre, mas sem degradês ou mistura de paletas */
+.aconchego-overrides .intro-section,
+.aconchego-overrides .video-testimonials-section,
+.aconchego-overrides .faq-section{
+  background:#fbfaf6!important;background-image:none!important;
+}
+.aconchego-overrides .pain-section,
+.aconchego-overrides .benefits-section{
+  background:#fff1e8!important;background-image:none!important;
+}
+.aconchego-overrides .procedures-section,
+.aconchego-overrides .aconchego-gallery-section{
+  background:#edf6f4!important;background-image:none!important;
+}
+.aconchego-overrides .how-section,
+.aconchego-overrides .maria-location-section{
+  background:#eef2fb!important;background-image:none!important;
+}
+.aconchego-overrides .aconchego-welcome-section{
+  background:#fff7d9!important;background-image:none!important;
+}
+.aconchego-overrides .maria-final{
+  background:#40898e!important;background-image:none!important;
+}
+.aconchego-overrides .maria-footer{background:#286d72!important;background-image:none!important}
+/* Tipografia com contraste consistente */
+.aconchego-overrides .section h2,
+.aconchego-overrides .pain-section h2,
+.aconchego-overrides .how-section h2,
+.aconchego-overrides .maria-location-section h2{
+  color:#344d4d!important;
+}
+.aconchego-overrides .section h2 em{color:#40898e!important}
+.aconchego-overrides .eyebrow{color:#40898e!important}
+.aconchego-overrides .section-heading p,
+.aconchego-overrides .intro-copy p,
+.aconchego-overrides .hero-lead{color:#596d6d!important}
+/* Cartões neutros para que cada seção tenha uma identidade clara sem excesso de cores */
+.aconchego-overrides .maria-service-card,
+.aconchego-overrides .step-card,
+.aconchego-overrides .video-testimonial-card,
+.aconchego-overrides .aconchego-gallery-card,
+.aconchego-overrides .aconchego-values-grid article,
+.aconchego-overrides .benefit-grid article,
+.aconchego-overrides .faq-item{
+  background:#fff!important;
+  border:1px solid #dce7e5!important;
+  box-shadow:0 5px 18px rgba(40,80,80,.06)!important;
+}
+.aconchego-overrides .maria-service-card .procedure-icon,
+.aconchego-overrides .how-section .step-number{
+  background:#dcefed!important;border-color:#c4e0dd!important;color:#286d72!important;
+}
+.aconchego-overrides .aconchego-values-grid article>span{
+  background:#fff0c2!important;color:#8a6a22!important;
+}
+.aconchego-overrides .benefit-grid article>span{color:#40898e!important}
+.aconchego-overrides .video-testimonial-placeholder{background:#e5f1ef!important;background-image:none!important}
+.aconchego-overrides .video-play{background:#40898e!important}
+.aconchego-overrides .aconchego-amenities span{
+  background:#fff!important;color:#286d72!important;border:1px solid #dce7e5!important;
+}
+.aconchego-overrides .pain-section .centered-list div{background:#fff!important;border-color:#f0d8cb!important}
+.aconchego-overrides .maria-final h2,
+.aconchego-overrides .maria-final p,
+.aconchego-overrides .maria-final .eyebrow{color:#fff!important}
+.aconchego-overrides .maria-final .btn-primary{
+  background:#fff!important;border-color:#fff!important;color:#286d72!important;
+}
+.aconchego-overrides .aconchego-wordmark{color:#fff!important}
+@media(max-width:760px){
+  .aconchego-overrides .maria-hero{background:#f7f8f7!important}
+}
