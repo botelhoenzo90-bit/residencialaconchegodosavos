@@ -1371,3 +1371,22 @@ body,.jt-site{background:#fffdf9;color:#25384a}
 .aconchego-overrides .intro-section .intro-grid{display:block;width:100%;max-width:800px;margin-left:auto;margin-right:auto}
 .aconchego-overrides .intro-section .intro-copy{width:100%;max-width:100%;margin-left:auto;margin-right:auto;text-align:center}
 .aconchego-overrides .intro-section .intro-copy .eyebrow{justify-content:center}
+
+
+/* Carrosséis do residencial em largura total, de ponta a ponta da tela */
+.aconchego-overrides .aconchego-gallery-section .aconchego-gallery-window{
+  width:100vw!important;
+  max-width:none!important;
+  margin-left:calc(50% - 50vw)!important;
+  margin-right:calc(50% - 50vw)!important;
+  padding:8px 0 18px!important;
+  overflow:hidden!important;
+}
+.aconchego-overrides .aconchego-gallery-section .aconchego-gallery-track{
+  width:max-content!important;
+  gap:18px!important;
+}
+.aconchego-overrides .aconchego-gallery-section .aconchego-gallery-card,
+.aconchego-overrides .aconchego-gallery-section .aconchego-media-card{
+  flex-shrink:0!important;
+}
