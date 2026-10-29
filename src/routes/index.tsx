@@ -1,6 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import aconchegoLogo from "@/assets/logo-aconchego-dos-avos.png.asset.json";
+import medicoGeriatra from "@/assets/medico-geriatra.jpg.asset.json";
+import enfermeiraPadrao from "@/assets/enfermeira-padrao.jpg.asset.json";
+import tecnicos24Horas from "@/assets/tecnicos-24-horas.jpg.asset.json";
+import cuidadoras from "@/assets/cuidadoras.jpg.asset.json";
+import nutricionista from "@/assets/nutricionista.jpg.asset.json";
+import atividadesSemanais from "@/assets/atividades-semanais.jpg.asset.json";
 import {
   Activity, ArrowRight, Bandage, CalendarDays, Check, ChevronDown, CircleCheck, Heart, HeartHandshake, HeartPulse, House, MessageCircle, ShieldCheck, Stethoscope, Tv, Users, Utensils, WashingMachine, Wifi,
 } from "lucide-react";
@@ -24,12 +30,12 @@ export const Route = createFileRoute("/")({
 
 const WHATSAPP = "https://wa.me/555199021329";
 const services = [
-  { title: "Médico geriatra mensal", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=85", text: "Acompanhamento médico periódico com atenção à saúde e às necessidades de cada residente.", icon: Stethoscope },
-  { title: "Enfermeira padrão", image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=85", text: "Atenção de enfermagem e acompanhamento dos cuidados com responsabilidade e carinho.", icon: HeartPulse },
-  { title: "Técnicos 24 horas", image: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=85", text: "Equipe técnica presente durante o dia e a noite para apoiar a rotina dos residentes.", icon: ShieldCheck },
-  { title: "Cuidadoras", image: "https://images.unsplash.com/photo-1576765608866-5b51046452b4?auto=format&fit=crop&w=900&q=85", text: "Apoio nas atividades diárias com respeito, paciência, atenção e afeto.", icon: Heart },
-  { title: "Nutricionista", image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=85", text: "Orientação nutricional para uma rotina alimentar planejada conforme as necessidades.", icon: Utensils },
-  { title: "Atividades semanais", image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=85", text: "Atividades conduzidas por professora para estimular a convivência, a criatividade e o bem-estar.", icon: CalendarDays },
+  { title: "Médico geriatra mensal", image: medicoGeriatra.url, text: "Acompanhamento médico periódico com atenção à saúde e às necessidades de cada residente.", icon: Stethoscope },
+  { title: "Enfermeira padrão", image: enfermeiraPadrao.url, text: "Atenção de enfermagem e acompanhamento dos cuidados com responsabilidade e carinho.", icon: HeartPulse },
+  { title: "Técnicos 24 horas", image: tecnicos24Horas.url, text: "Equipe técnica presente durante o dia e a noite para apoiar a rotina dos residentes.", icon: ShieldCheck },
+  { title: "Cuidadoras", image: cuidadoras.url, text: "Apoio nas atividades diárias com respeito, paciência, atenção e afeto.", icon: Heart },
+  { title: "Nutricionista", image: nutricionista.url, text: "Orientação nutricional para uma rotina alimentar planejada conforme as necessidades.", icon: Utensils },
+  { title: "Atividades semanais", image: atividadesSemanais.url, text: "Atividades conduzidas por professora para estimular a convivência, a criatividade e o bem-estar.", icon: CalendarDays },
   { title: "Fisioterapia", image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=85", text: "Acompanhamento voltado à mobilidade, funcionalidade e qualidade de vida.", icon: Activity },
   { title: "Estrutura acolhedora", image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85", text: "Pátio amplo e monitorado, lavanderia própria, TV a cabo e Wi-Fi.", icon: House },
 ];
