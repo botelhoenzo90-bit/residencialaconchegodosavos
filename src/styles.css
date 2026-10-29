@@ -1127,3 +1127,114 @@ body,.jt-site{background:#fffdf9;color:#25384a}
   border-radius:16px;
   margin:12px 12px 0;
 }
+
+
+/* Ajustes de layout solicitados para o Residencial Aconchego dos Avós */
+.aconchego-overrides .hero-brand-logo.aconchego-logo{
+  width:min(145px,38vw)!important;
+  max-height:230px!important;
+  margin:0 auto 14px!important;
+  object-fit:contain!important;
+}
+.aconchego-overrides .hero-copy .hero-actions .btn-outline{
+  background:#fff!important;
+  border:1px solid #40898e!important;
+  color:#286d72!important;
+  box-shadow:none!important;
+}
+/* NOSSO JEITO DE CUIDAR: quatro cards verticais, limpos e fáceis de ler */
+.aconchego-overrides .care-values-list{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  max-width:690px;
+  margin:28px auto 25px;
+  text-align:left;
+}
+.aconchego-overrides .care-values-list article{
+  display:grid;
+  grid-template-columns:44px minmax(0,1fr) 30px;
+  align-items:center;
+  gap:15px;
+  padding:18px 20px;
+  background:#fff!important;
+  border:1px solid #f0d8cb!important;
+  border-radius:17px;
+  box-shadow:0 6px 20px rgba(80,70,60,.05);
+}
+.aconchego-overrides .care-values-list article>span{
+  display:grid;
+  place-items:center;
+  width:42px;height:42px;
+  border-radius:50%;
+  background:#fff1e8;
+  color:#a9664b;
+  font-size:12px;
+  font-weight:800;
+}
+.aconchego-overrides .care-values-list h3{
+  margin:0 0 5px;
+  color:#344d4d;
+  font-family:Georgia,serif;
+  font-size:19px;
+  font-weight:500;
+}
+.aconchego-overrides .care-values-list p{
+  margin:0;
+  color:#647575;
+  font-size:13px;
+  line-height:1.6;
+}
+.aconchego-overrides .care-values-list article>svg{color:#40898e}
+/* Carrossel contínuo de imagens na única seção Conheça Nossa Casa */
+.aconchego-overrides .aconchego-gallery-window{
+  overflow:hidden;
+  width:100%;
+  margin:28px 0 24px;
+  padding:5px 0 14px;
+}
+.aconchego-overrides .aconchego-gallery-track{
+  display:flex;
+  width:max-content;
+  gap:18px;
+  animation:aconchegoGalleryMove 32s linear infinite;
+}
+.aconchego-overrides .aconchego-gallery-window:hover .aconchego-gallery-track{
+  animation-play-state:paused;
+}
+.aconchego-overrides .aconchego-gallery-card{
+  flex:0 0 320px;
+  width:320px;
+  overflow:hidden;
+  padding:0 0 16px;
+  text-align:center;
+}
+.aconchego-overrides .aconchego-gallery-card img{
+  display:block;
+  width:100%;
+  height:225px;
+  object-fit:cover;
+  border-radius:15px;
+}
+.aconchego-overrides .aconchego-gallery-card h3{
+  padding:0 14px;
+  margin:14px 0 0;
+  font-size:17px;
+}
+@keyframes aconchegoGalleryMove{
+  from{transform:translateX(0)}
+  to{transform:translateX(calc(-50% - 9px))}
+}
+.aconchego-overrides .aconchego-gallery-section .section-action,
+.aconchego-overrides .benefits-section .section-action{
+  margin-top:25px;
+}
+@media(max-width:700px){
+  .aconchego-overrides .hero-brand-logo.aconchego-logo{width:min(125px,34vw)!important;max-height:195px!important}
+  .aconchego-overrides .care-values-list article{grid-template-columns:38px minmax(0,1fr) 24px;gap:11px;padding:15px}
+  .aconchego-overrides .care-values-list article>span{width:36px;height:36px}
+  .aconchego-overrides .care-values-list h3{font-size:17px}
+  .aconchego-overrides .care-values-list p{font-size:12px}
+  .aconchego-overrides .aconchego-gallery-card{flex-basis:260px;width:260px}
+  .aconchego-overrides .aconchego-gallery-card img{height:190px}
+}
