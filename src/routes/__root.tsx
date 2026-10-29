@@ -79,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Residencial Aconchego dos Avós | Mais que um lar, uma família" },
-      { name: "description", content: "Acolhimento, cuidado profissional e convivência no Residencial Aconchego dos Avós." },
+      { name: "description", content: "Acolhimento, cuidado profissional e carinho no Residencial Aconchego dos Avós." },
       { name: "author", content: "Residencial Aconchego dos Avós" },
       { name: "google-site-verification", content: "9myn0HdI7aGpUZnVvPyhIOqrxVOLgTJA9XtYO1VNmew" },
       { property: "og:title", content: "Jaqueline Teixeira | Estética & Massoterapia" },
