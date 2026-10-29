@@ -1238,3 +1238,104 @@ body,.jt-site{background:#fffdf9;color:#25384a}
   .aconchego-overrides .aconchego-gallery-card{flex-basis:260px;width:260px}
   .aconchego-overrides .aconchego-gallery-card img{height:190px}
 }
+
+
+/* Refinamento dos cards de cuidado: ícones consistentes e composição alinhada */
+.aconchego-overrides .care-values-list{
+  max-width:760px!important;
+  gap:14px!important;
+  margin:30px auto 26px!important;
+}
+.aconchego-overrides .care-values-list article{
+  grid-template-columns:52px minmax(0,1fr) 38px!important;
+  gap:17px!important;
+  min-height:104px;
+  padding:20px 22px!important;
+  border:1px solid #e4e9e4!important;
+  border-radius:18px!important;
+  background:#fff!important;
+  box-shadow:0 5px 16px rgba(43,74,66,.055)!important;
+}
+.aconchego-overrides .care-values-list article>span{
+  width:48px!important;height:48px!important;
+  border-radius:15px!important;
+  background:#e5f1ee!important;
+  color:#347d7e!important;
+  font-size:13px!important;
+  font-weight:750!important;
+}
+.aconchego-overrides .care-values-list h3{
+  margin:0 0 6px!important;
+  color:#344d4d!important;
+  font-family:inherit!important;
+  font-size:18px!important;
+  font-weight:700!important;
+  line-height:1.35!important;
+}
+.aconchego-overrides .care-values-list p{
+  margin:0!important;
+  color:#657574!important;
+  font-size:13px!important;
+  line-height:1.65!important;
+}
+.aconchego-overrides .care-values-list article>svg{
+  width:22px;height:22px;
+  padding:0;
+  color:#40898e!important;
+  justify-self:center;
+}
+/* Comodidades: quatro cards do mesmo tamanho em uma grade organizada */
+.aconchego-overrides .aconchego-amenities{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:12px!important;
+  width:100%!important;
+  max-width:980px!important;
+  margin:26px auto 0!important;
+  align-items:stretch!important;
+}
+.aconchego-overrides .aconchego-amenities span{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:9px!important;
+  min-width:0!important;
+  min-height:64px!important;
+  padding:14px 12px!important;
+  border-radius:14px!important;
+  background:#fff!important;
+  border:1px solid #dce7e5!important;
+  color:#355e5c!important;
+  font-size:13px!important;
+  font-weight:650!important;
+  line-height:1.35!important;
+  text-align:center!important;
+  box-shadow:0 4px 14px rgba(43,74,66,.045)!important;
+}
+.aconchego-overrides .aconchego-amenities span svg{
+  flex:0 0 19px!important;
+  width:19px!important;height:19px!important;
+  color:#40898e!important;
+}
+@media(max-width:760px){
+  .aconchego-overrides .care-values-list article{
+    grid-template-columns:42px minmax(0,1fr) 24px!important;
+    gap:12px!important;
+    min-height:unset;
+    padding:16px!important;
+  }
+  .aconchego-overrides .care-values-list article>span{
+    width:40px!important;height:40px!important;border-radius:12px!important;
+  }
+  .aconchego-overrides .care-values-list h3{font-size:16px!important}
+  .aconchego-overrides .care-values-list p{font-size:12px!important}
+  .aconchego-overrides .aconchego-amenities{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px!important;
+  }
+  .aconchego-overrides .aconchego-amenities span{
+    min-height:62px!important;
+    padding:12px 8px!important;
+    font-size:12px!important;
+  }
+}
