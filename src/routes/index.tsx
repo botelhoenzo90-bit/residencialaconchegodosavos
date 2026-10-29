@@ -19,6 +19,12 @@ import atividade07 from "@/assets/atividade-07.jpg.asset.json";
 import atividade08 from "@/assets/atividade-08.mp4.asset.json";
 import atividade09 from "@/assets/atividade-09.mp4.asset.json";
 import atividade10 from "@/assets/atividade-10.mp4.asset.json";
+import atividade11 from "@/assets/atividade-11.jpg.asset.json";
+import atividade12 from "@/assets/atividade-12.jpg.asset.json";
+import atividade13 from "@/assets/atividade-13.jpg.asset.json";
+import atividade14 from "@/assets/atividade-14.mp4.asset.json";
+import atividade15 from "@/assets/atividade-15.mp4.asset.json";
+import atividade16 from "@/assets/atividade-16.mp4.asset.json";
 import {
   Activity, ArrowRight, Bandage, CalendarDays, Check, ChevronDown, CircleCheck, Heart, HeartHandshake, HeartPulse, House, MessageCircle, ShieldCheck, Stethoscope, Tv, Users, Utensils, WashingMachine, Wifi,
 } from "lucide-react";
@@ -51,7 +57,7 @@ const services = [
   { title: "Fisioterapia", image: fisioterapia.url, text: "Acompanhamento voltado à mobilidade, funcionalidade e qualidade de vida.", icon: Activity },
   { title: "Estrutura acolhedora", image: ambienteAcolhedor.url, text: "Pátio amplo e monitorado, lavanderia própria, TV a cabo e Wi-Fi.", icon: House },
 ];
-const activityMedia = [{ type: "image", url: atividade01.url },{ type: "image", url: atividade02.url },{ type: "video", url: atividade08.url },{ type: "image", url: atividade03.url },{ type: "image", url: atividade04.url },{ type: "video", url: atividade09.url },{ type: "image", url: atividade05.url },{ type: "image", url: atividade06.url },{ type: "video", url: atividade10.url },{ type: "image", url: atividade07.url }];
+const activityMedia = [{ type: "image", url: atividade01.url },{ type: "image", url: atividade02.url },{ type: "video", url: atividade08.url },{ type: "image", url: atividade03.url },{ type: "image", url: atividade04.url },{ type: "video", url: atividade09.url },{ type: "image", url: atividade05.url },{ type: "image", url: atividade06.url },{ type: "video", url: atividade10.url },{ type: "image", url: atividade07.url },{ type: "image", url: atividade11.url },{ type: "video", url: atividade14.url },{ type: "image", url: atividade12.url },{ type: "video", url: atividade15.url },{ type: "image", url: atividade13.url },{ type: "video", url: atividade16.url }];
 const faqs = [
   ["Quais cuidados estão incluídos?", "Contamos com médico geriátrico mensal, enfermeira padrão, técnicos 24 horas, cuidadoras, nutricionista, professora para atividades semanais e fisioterapia."],
   ["Recebem pacientes em recuperação com menos de 60 anos?", "Sim. Recebemos pacientes em recuperação com menos de 60 anos, em alas separadas. Consulte nossa equipe para conversar sobre as necessidades e disponibilidade."],
