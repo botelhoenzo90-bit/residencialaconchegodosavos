@@ -635,6 +635,7 @@ body,.jt-site{background:#fffdf9;color:#25384a}
 }
 
 /* Ajustes: logo, contraste, avaliações */
+.hero-brand-logo.aconchego-logo{width:min(180px,48vw);height:auto;object-fit:contain}
 .hero-brand-logo{display:block;width:min(260px,62vw);height:auto;margin:0 auto 18px}
 .footer-logo{display:block;width:170px;height:auto;margin:0 auto 14px;background:#fff;border-radius:16px;padding:10px}
 .jt-site .maria-final .eyebrow,.jt-site .maria-final h2,.jt-site .maria-final p{color:#fff !important}
