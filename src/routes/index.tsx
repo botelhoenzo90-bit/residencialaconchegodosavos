@@ -12,9 +12,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Residencial Aconchego dos Avós" },
       { property: "og:description", content: "Mais que um lar, uma família. Cuidado, segurança e acolhimento." },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: `https://clinicanaama.lovable.app${shareNaama.url}` },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: `https://clinicanaama.lovable.app${shareNaama.url}` },
       { name: "theme-color", content: "#bceee2" },
     ],
   }),
@@ -53,7 +51,7 @@ function Index() {
             <span><strong>ACONCHEGO DOS AVÓS</strong><small>RESIDENCIAL • CUIDADO • FAMÍLIA</small></span>
           </a>
           <nav className="nav maria-nav" aria-label="Navegação principal">
-            <a href="#sobre">Sobre</a><a href="#tratamentos">Tratamentos</a><a href="#como-funciona">Como funciona</a><a href="#duvidas">Dúvidas</a>
+            <a href="#sobre">Sobre</a><a href="#tratamentos">Tratamentos</a><a href="#como-funciona">Nossa rotina</a><a href="#duvidas">Dúvidas</a>
           </nav>
           <button className="header-cta" onClick={() => goWhatsapp("agendar um atendimento")}><MessageCircle size={16}/> Falar com a equipe</button>
         </div>
@@ -63,7 +61,7 @@ function Index() {
         <div className="hero-glow"/>
         <div className="container hero-grid">
           <div className="hero-copy center-hero">
-            <img className="hero-brand-logo" src={logoNaama.url} alt="Clínica Domiciliar Naamã — Cuidado especializado que transforma" />
+            <div className="hero-brand-logo aconchego-wordmark" aria-label="Residencial Aconchego dos Avós">♡ ACONCHEGO DOS AVÓS</div>
             <h1>Mais que um lar,<br/><em>uma família.</em></h1>
             <p className="hero-lead">Um lugar para viver com acolhimento, cuidado profissional e momentos que fazem bem. Cada pessoa é recebida com respeito, atenção e muito carinho.</p>
             <div className="hero-actions">
@@ -139,6 +137,12 @@ function Index() {
         </div>
       </section>
 
+      <section className="section aconchego-gallery-section" id="ambientes"><div className="container"><div className="section-heading center"><span className="eyebrow">CONHEÇA NOSSA CASA</span><h2>Ambientes para viver com <em>conforto e acolhimento.</em></h2><p>Um espaço para conviver, descansar e criar boas lembranças. As imagens são ilustrativas e podem ser substituídas por fotos reais do residencial.</p></div><div className="aconchego-gallery-grid">{[
+ {title:"Espaços de convivência",image:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85"},
+ {title:"Conforto no dia a dia",image:"https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85"},
+ {title:"Ambientes acolhedores",image:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85"}
+ ].map(item=><article className="aconchego-gallery-card" key={item.title}><img src={item.image} alt={item.title} loading="lazy"/><h3>{item.title}</h3></article>)}</div><div className="aconchego-amenities"><span><House size={17}/> Pátio amplo e monitorado</span><span><WashingMachine size={17}/> Lavanderia própria</span><span><Tv size={17}/> TV a cabo</span><span><Wifi size={17}/> Wi-Fi</span></div></div></section>
+
       <section className="section benefits-section"><div className="container"><div className="section-heading center"><span className="eyebrow">NOSSO COMPROMISSO</span><h2>Informação clara, acolhimento e <em>responsabilidade.</em></h2></div><div className="benefit-grid maria-benefits"><article><span>01</span><HeartPulse/><h3>Atenção individual</h3><p>Cada residente tem sua história, hábitos e necessidades.</p></article><article><span>02</span><ShieldCheck/><h3>Equipe presente</h3><p>Técnicos disponíveis 24 horas para apoiar a rotina.</p></article><article><span>03</span><Stethoscope/><h3>Convivência</h3><p>Atividades semanais e momentos compartilhados.</p></article><article><span>04</span><CircleCheck/><h3>Estrutura acolhedora</h3><p>Pátio monitorado, lavanderia própria, TV a cabo e Wi-Fi.</p></article></div></div></section>
 
       <section className="section maria-location-section" id="localizacao"><div className="container maria-location-grid"><div><span className="eyebrow">LOCALIZAÇÃO</span><h2>Um lugar para sua família conhecer e <em>se sentir acolhida.</em></h2><p>Entre em contato para tirar dúvidas e combinar uma visita ao Residencial Aconchego dos Avós.</p><button className="btn btn-primary" onClick={() => goWhatsapp("consultar endereço e disponibilidade de atendimento")}><MessageCircle size={18}/> Agendar uma visita</button><p className="maria-map-note">Fale com nossa equipe para mais informações.</p></div><div className="maria-map-frame"><iframe title="Mapa de localização do residencial" src="https://maps.google.com/maps?q=Porto%20Alegre%2C%20RS%2C%20Brasil&t=&z=10&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen /></div></div></section>
@@ -148,7 +152,7 @@ function Index() {
 
       <section className="section final-cta maria-final"><div className="final-glow"/><div className="container narrow center"><span className="eyebrow">VAMOS CONVERSAR?</span><h2>O próximo passo pode ser uma visita. Vamos nos conhecer?</h2><p>Converse com nossa equipe e conheça o Residencial Aconchego dos Avós.</p><button className="btn btn-primary" onClick={() => goWhatsapp("conversar sobre atendimento")}><MessageCircle size={18}/> Falar com a equipe pelo WhatsApp</button></div></section>
 
-      <footer className="footer maria-footer"><div className="container footer-grid"><div className="footer-brand"><img className="footer-logo" src={logoNaama.url} alt="Clínica Domiciliar Naamã" loading="lazy"/><p>Mais que um lar, uma família. Acolhimento, cuidado e respeito em cada etapa da vida.</p></div><div><h4>Navegação</h4><a href="#sobre">Sobre a clínica</a><a href="#tratamentos">Áreas de atuação</a><a href="#como-funciona">Como funciona</a><a href="#duvidas">Perguntas frequentes</a></div><div><h4>Contato</h4><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={14}/> +55 51 9902-1329</a><span><ShieldCheck size={14}/> Cuidado responsável e individualizado</span></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Clínica Naamã.</span><span>Mais que um lar, uma família</span></div></footer>
+      <footer className="footer maria-footer"><div className="container footer-grid"><div className="footer-brand"><div className="footer-logo aconchego-wordmark">♡ ACONCHEGO DOS AVÓS</div><p>Mais que um lar, uma família. Acolhimento, cuidado e respeito em cada etapa da vida.</p></div><div><h4>Navegação</h4><a href="#sobre">Nossa casa</a><a href="#tratamentos">Cuidados</a><a href="#como-funciona">Como funciona</a><a href="#duvidas">Perguntas frequentes</a></div><div><h4>Contato</h4><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={14}/> +55 51 9902-1329</a><span><ShieldCheck size={14}/> Mais que um lar, uma família</span></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Residencial Aconchego dos Avós.</span><span>Mais que um lar, uma família</span></div></footer>
 
       <a className="floating-wa maria-floating-wa" href={WHATSAPP} target="_blank" rel="noreferrer" aria-label="Falar com a equipe pelo WhatsApp"><img src="/whatsapp-flutuante/image.png" alt="" /><span>WhatsApp</span></a>
     </main>
