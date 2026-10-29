@@ -1365,3 +1365,9 @@ body,.jt-site{background:#fffdf9;color:#25384a}
 .aconchego-overrides .aconchego-gallery-card,.aconchego-overrides .aconchego-media-card{flex:0 0 240px!important;width:240px!important;height:340px!important;padding:0!important;border-radius:20px!important;overflow:hidden}
 .aconchego-overrides .aconchego-gallery-card img,.aconchego-overrides .aconchego-gallery-card video,.aconchego-overrides .aconchego-media-card img,.aconchego-overrides .aconchego-media-card video{display:block;width:100%!important;height:100%!important;object-fit:cover!important}
 @media(max-width:760px){.aconchego-overrides .aconchego-gallery-card,.aconchego-overrides .aconchego-media-card{flex-basis:200px!important;width:200px!important;height:290px!important}}
+
+
+/* Centraliza a seção de apresentação do Residencial Aconchego dos Avós */
+.aconchego-overrides .intro-section .intro-grid{display:block;width:100%;max-width:800px;margin-left:auto;margin-right:auto}
+.aconchego-overrides .intro-section .intro-copy{width:100%;max-width:100%;margin-left:auto;margin-right:auto;text-align:center}
+.aconchego-overrides .intro-section .intro-copy .eyebrow{justify-content:center}
