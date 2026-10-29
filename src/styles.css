@@ -759,3 +759,19 @@ body,.jt-site{background:#fffdf9;color:#25384a}
 .aconchego-amenities{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:25px}
 .aconchego-amenities span{display:inline-flex;align-items:center;gap:8px;padding:12px 15px;border-radius:12px;background:#ddf4e9;color:#286b59;font-weight:650;font-size:13px}
 @media(max-width:700px){.aconchego-gallery-grid{grid-template-columns:1fr}.aconchego-gallery-card img{height:220px}.aconchego-amenities span{font-size:11px}}
+
+/* Identidade visual acolhedora sem alterar a estrutura original do site */
+.aconchego-overrides .maria-hero{background:linear-gradient(135deg,#c9f1e8 0%,#e6f8ee 58%,#fff3df 100%)!important}
+.aconchego-overrides .maria-hero .hero-glow{background:#d3f2e7!important}
+.aconchego-overrides .maria-hero h1 em,.aconchego-overrides .section h2 em{color:#39977e}
+.aconchego-overrides .btn-primary,.aconchego-overrides .header-cta{background:#287b67!important;border-color:#287b67!important}
+.aconchego-overrides .eyebrow{color:#398b74}
+.aconchego-gallery-section{background:#f1faf5}
+.aconchego-gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.aconchego-gallery-card{overflow:hidden;background:white;border-radius:18px;box-shadow:0 8px 26px #286d5c12}
+.aconchego-gallery-card img{display:block;width:100%;height:230px;object-fit:cover}
+.aconchego-gallery-card h3{font-size:18px;padding:0 18px 18px;color:#286b59}
+.aconchego-amenities{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:25px}
+.aconchego-amenities span{display:inline-flex;align-items:center;gap:8px;padding:12px 15px;border-radius:12px;background:#ddf4e9;color:#286b59;font-weight:650;font-size:13px}
+.aconchego-wordmark{font-family:Georgia,serif;font-weight:800;letter-spacing:.04em;color:#286b59}
+@media(max-width:700px){.aconchego-gallery-grid{grid-template-columns:1fr}.aconchego-gallery-card img{height:220px}.aconchego-amenities span{font-size:11px}}
