@@ -775,3 +775,51 @@ body,.jt-site{background:#fffdf9;color:#25384a}
 .aconchego-amenities span{display:inline-flex;align-items:center;gap:8px;padding:12px 15px;border-radius:12px;background:#ddf4e9;color:#286b59;font-weight:650;font-size:13px}
 .aconchego-wordmark{font-family:Georgia,serif;font-weight:800;letter-spacing:.04em;color:#286b59}
 @media(max-width:700px){.aconchego-gallery-grid{grid-template-columns:1fr}.aconchego-gallery-card img{height:220px}.aconchego-amenities span{font-size:11px}}
+
+
+/* Identidade alegre e acolhedora — Residencial Aconchego dos Avós */
+.aconchego-overrides{--aco-mint:#c9f1e8;--aco-green:#287b67;--aco-deep:#23594e;--aco-yellow:#fff0b8;--aco-peach:#ffe0d2;--aco-lilac:#eee6ff;--aco-cream:#fffaf1}
+.aconchego-overrides .maria-hero{background:linear-gradient(135deg,#bdeee3 0%,#d9f6e9 52%,#fff0c7 100%)!important}
+.aconchego-overrides .maria-hero .hero-glow{background:radial-gradient(circle,#fff2c9 0%,#c7f0e4 50%,transparent 75%)!important;opacity:.8}
+.aconchego-overrides .maria-hero h1,.aconchego-overrides .section h2{color:#23594e!important}
+.aconchego-overrides .maria-hero h1 em,.aconchego-overrides .section h2 em{color:#df805f!important}
+.aconchego-overrides .hero-lead{color:#3f6258!important}
+.aconchego-overrides .eyebrow{color:#287b67!important}
+.aconchego-overrides .btn-primary,.aconchego-overrides .header-cta{background:#287b67!important;border-color:#287b67!important;color:#fff!important}
+.aconchego-overrides .btn-primary:hover,.aconchego-overrides .header-cta:hover{background:#205f50!important}
+.aconchego-overrides .info-marquee{background:linear-gradient(90deg,#287b67,#e6a06f,#8b8bc7,#287b67)!important;border:0}
+.aconchego-overrides .intro-section{background:#fffaf1!important}
+.aconchego-overrides .pain-section{background:linear-gradient(135deg,#fff0b8,#ffe0d2)!important;color:#23594e!important}
+.aconchego-overrides .pain-section h2,.aconchego-overrides .pain-section .eyebrow{color:#23594e!important}
+.aconchego-overrides .pain-section .centered-list div{background:#fffaf1;border-radius:14px;border:1px solid #f3d8bd!important}
+.aconchego-overrides .procedures-section{background:#e9f8f1!important}
+.aconchego-overrides .maria-service-card{border:1px solid #d2eee2!important;border-radius:22px!important;box-shadow:0 12px 28px rgba(40,123,103,.10)!important}
+.aconchego-overrides .maria-service-card .procedure-icon{background:#fff0b8!important;color:#287b67!important;border-radius:14px}
+.aconchego-overrides .how-section{background:linear-gradient(135deg,#eee6ff,#e4f6ef)!important}
+.aconchego-overrides .how-section .step-number{background:#fff0b8!important;border-color:#f3dca0!important;color:#23594e!important}
+.aconchego-overrides .video-testimonials-section{background:#fffaf1!important}
+.aconchego-overrides .video-testimonial-card{border-color:#d7eee3!important}
+.aconchego-overrides .video-testimonial-placeholder{background:linear-gradient(135deg,#c9f1e8,#fff0b8,#eee6ff)!important}
+.aconchego-overrides .video-play{background:#df805f!important}
+.aconchego-overrides .aconchego-welcome-section{background:linear-gradient(135deg,#fff0b8 0%,#fffaf1 48%,#eee6ff 100%)!important;padding:66px 0}
+.aconchego-overrides .aconchego-values-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px}
+.aconchego-overrides .aconchego-values-grid article{background:#fff;border:1px solid #f0e5d5;border-radius:22px;padding:25px 22px;box-shadow:0 10px 26px rgba(35,89,78,.07);text-align:center}
+.aconchego-overrides .aconchego-values-grid article:nth-child(2){background:#e6f7ef}
+.aconchego-overrides .aconchego-values-grid article:nth-child(3){background:#f0eaff}
+.aconchego-overrides .aconchego-values-grid article>span{display:grid;place-items:center;width:52px;height:52px;margin:0 auto 14px;border-radius:18px;background:#ffe0d2;color:#a8573d;font-size:27px}
+.aconchego-overrides .aconchego-values-grid h3{color:#23594e;font-size:19px;margin:0 0 9px}
+.aconchego-overrides .aconchego-values-grid p{color:#536960;font-size:15px;line-height:1.7;margin:0}
+.aconchego-overrides .aconchego-gallery-section{background:#e7f7ef!important;padding:68px 0}
+.aconchego-overrides .aconchego-gallery-card{border-radius:22px;border:1px solid #d3eee2;transition:transform .2s ease,box-shadow .2s ease}
+.aconchego-overrides .aconchego-gallery-card h3{color:#23594e;padding-top:15px}
+.aconchego-overrides .aconchego-amenities span{background:#fff0b8;color:#23594e;border:1px solid #f2dfa0}
+.aconchego-overrides .benefits-section{background:#fffaf1!important}
+.aconchego-overrides .benefit-grid article{background:#e6f7ef;border-radius:20px;padding:24px}
+.aconchego-overrides .benefit-grid article:nth-child(even){background:#eee6ff}
+.aconchego-overrides .maria-location-section{background:#fff0d8!important}
+.aconchego-overrides .faq-section{background:linear-gradient(135deg,#e6f7ef,#fffaf1)!important}
+.aconchego-overrides .faq-item{border-color:#d2e9dd!important}
+.aconchego-overrides .maria-final{background:linear-gradient(125deg,#287b67,#4c9b82,#d88b68)!important}
+.aconchego-overrides .maria-footer{background:#23594e!important}
+.aconchego-overrides .aconchego-wordmark{color:#287b67}
+@media(max-width:760px){.aconchego-overrides .aconchego-values-grid{grid-template-columns:1fr;gap:13px}.aconchego-overrides .aconchego-welcome-section,.aconchego-overrides .aconchego-gallery-section{padding:48px 0}}
