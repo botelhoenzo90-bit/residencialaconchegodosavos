@@ -1,218 +1,139 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
-  Activity, ArrowRight, Bandage, Check, ChevronDown, CircleCheck, HeartPulse, MessageCircle, ShieldCheck, Stethoscope,
+  Activity, ArrowRight, Baby, CalendarDays, Check, ChevronDown, Heart, HeartHandshake,
+  House, Leaf, MessageCircle, PlayCircle, ShieldCheck, Sparkles, Stethoscope, Tv,
+  Users, Utensils, WashingMachine, Wifi, Flower2, Sun, BedDouble,
 } from "lucide-react";
-import cotoAmputacaoRegistro from "@/assets/coto-amputacao-registro.jpg.asset.json";
-import cotoAmputacaoAntesDepois from "@/assets/coto-amputacao-antes-depois.jpg.asset.json";
-import ulceraCotoAntes from "@/assets/ulcera-coto-antes.jpg.asset.json";
-import ulceraCotoDepois from "@/assets/ulcera-coto-depois.jpg.asset.json";
-import ulceraCalcanharAntes from "@/assets/ulcera-calcanhar-antes.jpg.asset.json";
-import ulceraCalcanharDepois from "@/assets/ulcera-calcanhar-depois.jpg.asset.json";
-import logoNaama from "@/assets/logo-naama.png.asset.json";
-import shareNaama from "@/assets/compartilhamento-naama.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Clínica Naamã | Cuidado Especializado com Feridas e Pé Diabético" },
-      { name: "description", content: "Clínica Naamã: cuidado especializado com feridas, pé diabético e curativos, com opção de atendimento domiciliar." },
-      { property: "og:title", content: "Clínica Naamã | Feridas e Pé Diabético" },
-      { property: "og:description", content: "Cuidado especializado, acolhedor e individualizado para feridas e pé diabético." },
+      { title: "Residencial Aconchego dos Avós | Mais que um lar, uma família" },
+      { name: "description", content: "Acolhimento, cuidado profissional e rotina com carinho no Residencial Aconchego dos Avós. Conheça nossa estrutura e fale com a equipe." },
+      { property: "og:title", content: "Residencial Aconchego dos Avós" },
+      { property: "og:description", content: "Mais que um lar, uma família. Cuidado, segurança e acolhimento em cada detalhe." },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: `https://clinicanaama.lovable.app${shareNaama.url}` },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: `https://clinicanaama.lovable.app${shareNaama.url}` },
-      { name: "theme-color", content: "#0b4168" },
+      { name: "theme-color", content: "#c9f1e8" },
     ],
   }),
   component: Index,
 });
 
-const WHATSAPP = "https://wa.me/5512988298061";
-const services = [
-  { title: "Feridas agudas e crônicas", image: "/Cuidado%20Cl%C3%ADnico%20de%20Ferida%20no%20Calcanhar.png", text: "Avaliação e cuidado individualizado para feridas recentes ou de longa duração, com atenção às características de cada lesão.", icon: Bandage },
-  { title: "Pé diabético", image: "/Tratamento%20Cuidadoso%20de%20Ferida%20no%20P%C3%A9.png", text: "Acompanhamento especializado para lesões nos pés de pessoas com diabetes, com foco na avaliação, proteção e prevenção de complicações.", icon: Activity },
-  { title: "Curativos especializados", image: "/Cuidado%20Cl%C3%ADnico%20com%20Curativo%20no%20Joelho.png", text: "Curativos selecionados conforme a avaliação da ferida, a condição da pele e as necessidades de cada pessoa.", icon: ShieldCheck },
-  { title: "Lesões por pressão", image: "/Ilustra%C3%A7%C3%A3o%20M%C3%A9dica%20de%20%C3%9Alcera%20na%20Perna.png", text: "Cuidados para lesões por pressão, conforto, proteção da pele e orientações para ajudar a reduzir novos danos.", icon: HeartPulse },
-  { title: "Úlceras venosas e arteriais", image: "/Ilustra%C3%A7%C3%A3o%20M%C3%A9dica%20de%20%C3%9Alcera%20na%20Perna.png", text: "Avaliação e plano de cuidado individualizado para úlceras vasculares, considerando a necessidade de acompanhamento integrado.", icon: Activity },
-  { title: "Atendimento domiciliar", image: "/Cuidado%20Cl%C3%ADnico%20de%20Ferida%20no%20Calcanhar.png", text: "Cuidado especializado no conforto de casa, com atenção individual, orientação e respeito à rotina da pessoa atendida.", icon: HeartPulse },
-];
-const faqs = [
-  ["Quais tipos de feridas são atendidos?", "A Clínica Naamã oferece cuidado especializado para feridas agudas e crônicas, pé diabético, lesões por pressão e úlceras venosas e arteriais. A conduta é definida após avaliação individual."],
-  ["O atendimento pode ser feito em casa?", "Entre em contato pelo WhatsApp para confirmar a disponibilidade de atendimento domiciliar, a região atendida e os detalhes da avaliação."],
-  ["Como funciona a primeira avaliação?", "O primeiro passo é conversar sobre a situação e as necessidades de cuidado. A profissional avalia a ferida e explica as possibilidades de acompanhamento e os próximos passos."],
-  ["O que fazer quando uma ferida não cicatriza?", "Uma ferida persistente, alterações de cor, secreção, mau cheiro, aumento da dor ou sinais de infecção precisam de avaliação profissional. Em situações de urgência, procure um serviço de saúde."],
-  ["Como posso agendar?", "Clique em qualquer botão de WhatsApp desta página para conversar com a equipe da Clínica Naamã e consultar informações sobre atendimento e disponibilidade."],
+const WHATSAPP = "https://wa.me/555199021329";
+const contact = (message: string) => `${WHATSAPP}?text=${encodeURIComponent(message)}`;
+
+const careServices = [
+  { icon: Stethoscope, title: "Médico geriátrico mensal", text: "Acompanhamento médico periódico para observar a saúde e as necessidades de cada residente." },
+  { icon: HeartHandshake, title: "Enfermeira padrão", text: "Atenção de enfermagem e acompanhamento dos cuidados com responsabilidade e carinho." },
+  { icon: ShieldCheck, title: "Técnicos 24 horas", text: "Equipe técnica presente dia e noite, para apoiar a rotina e os cuidados dos residentes." },
+  { icon: Heart, title: "Cuidadoras", text: "Apoio próximo nas atividades do dia a dia, com respeito, paciência e afeto." },
+  { icon: Utensils, title: "Nutricionista", text: "Orientação nutricional para uma rotina alimentar planejada conforme as necessidades." },
+  { icon: CalendarDays, title: "Atividades semanais", text: "Professora conduz atividades que estimulam a convivência, a criatividade e o bem-estar." },
+  { icon: Activity, title: "Fisioterapia", text: "Atividades e acompanhamento voltados à mobilidade, funcionalidade e qualidade de vida." },
+  { icon: House, title: "Ambiente acolhedor", text: "Pátio amplo e monitorado, lavanderia própria e espaços pensados para a rotina." },
 ];
 
-type BeforeAfterCase = { title: string; description: string; slot: "pair-a" | "pair-b" | "tall" | "feature"; before?: string; after?: string; single?: string; aspect?: string; panels?: boolean };
-const beforeAfterCases: BeforeAfterCase[] = [
-  { slot: "pair-a", title: "Úlcera em calcanhar", description: "Lesão aberta na região do calcanhar, com leito de granulação, acompanhada até o fechamento da ferida e a formação de tecido de cicatrização.", before: ulceraCalcanharAntes.url, after: ulceraCalcanharDepois.url },
-  { slot: "pair-b", title: "Ferida profunda em coto de amputação", description: "Ferida com tecido desvitalizado e bordas espessas que, com desbridamento e curativos especializados, evoluiu para um leito regular de tecido de granulação.", before: ulceraCotoAntes.url, after: ulceraCotoDepois.url },
-  { slot: "tall", title: "Acompanhamento de ferida em coto de amputação", description: "Registro publicado com autorização: à esquerda, a ferida aberta; à direita, a mesma área com a lesão praticamente fechada.", single: cotoAmputacaoRegistro.url, aspect: "900/1600", panels: true },
-  { slot: "feature", title: "Cicatrização de ferida em coto de amputação", description: "Registro publicado com autorização: à esquerda, a ferida com tecido desvitalizado; à direita, a mesma área em fase de cicatrização.", single: cotoAmputacaoAntesDepois.url, aspect: "828/739" },
+const gallery = [
+  { title: "Espaços para conviver", description: "Ambientes convidativos para conversar, compartilhar momentos e criar vínculos.", image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1100&q=85" },
+  { title: "Conforto no dia a dia", description: "Espaços claros e aconchegantes para descansar e se sentir em casa.", image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1100&q=85" },
+  { title: "Pátio e contato com o ar livre", description: "Um espaço para aproveitar a luz natural e momentos tranquilos.", image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1100&q=85" },
+  { title: "Detalhes que acolhem", description: "Uma atmosfera familiar, com espaços preparados para receber com carinho.", image: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1100&q=85" },
+];
+
+const faqs = [
+  ["Quais cuidados estão incluídos?", "O residencial conta com médico geriátrico mensal, enfermeira padrão, técnicos 24 horas, cuidadoras, nutricionista, professora para atividades semanais e fisioterapia."],
+  ["O residencial aceita pessoas com menos de 60 anos?", "Sim. Também aceitamos pessoas em recuperação com menos de 60 anos, em alas separadas. Entre em contato para conversar sobre as necessidades e a disponibilidade."],
+  ["O local possui espaços monitorados?", "Sim. O residencial conta com pátio amplo e monitorado, além de espaços para a convivência e a rotina diária."],
+  ["Há lavanderia, TV a cabo e Wi-Fi?", "Sim. Temos lavanderia própria, TV a cabo e Wi-Fi para apoiar o conforto do dia a dia."],
+  ["Como faço para conhecer o residencial?", "Clique em um dos botões de WhatsApp para falar com nossa equipe, tirar dúvidas e combinar os próximos passos para conhecer o espaço."],
 ];
 
 function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const goWhatsapp = (label: string) => window.open(`${WHATSAPP}?text=${encodeURIComponent(`Olá! Vim pelo site da Clínica Naamã e gostaria de ${label.toLowerCase()}.`)}`, "_blank", "noopener,noreferrer");
 
   return (
-    <main className="jt-site maria-site">
-      <header className="site-header maria-header-hidden">
-        <div className="container header-inner">
-          <a className="brand maria-brand" href="#inicio" aria-label="Clínica Naamã, cuidado especializado">
-            <span className="brand-mark"><HeartPulse size={22}/></span>
-            <span><strong>CLÍNICA NAAMÃ</strong><small>CUIDADO ESPECIALIZADO QUE TRANSFORMA</small></span>
+    <main className="jt-site aconchego-site">
+      <header className="aconchego-header">
+        <div className="container aconchego-header-inner">
+          <a className="aconchego-brand" href="#inicio" aria-label="Residencial Aconchego dos Avós - início">
+            <span className="aconchego-brand-icon"><HeartHandshake size={25}/></span>
+            <span><strong>Aconchego dos Avós</strong><small>RESIDENCIAL • CUIDADO • FAMÍLIA</small></span>
           </a>
-          <nav className="nav maria-nav" aria-label="Navegação principal">
-            <a href="#sobre">Sobre</a><a href="#tratamentos">Tratamentos</a><a href="#como-funciona">Como funciona</a><a href="#duvidas">Dúvidas</a>
+          <nav className="aconchego-nav" aria-label="Navegação principal">
+            <a href="#sobre">Nossa casa</a><a href="#cuidados">Cuidados</a><a href="#ambientes">Ambientes</a><a href="#videos">Vídeos</a><a href="#duvidas">Dúvidas</a>
           </nav>
-          <button className="header-cta" onClick={() => goWhatsapp("agendar um atendimento")}><MessageCircle size={16}/> Falar com a equipe</button>
+          <a className="aconchego-header-cta" href={contact("Olá! Gostaria de conhecer o Residencial Aconchego dos Avós.")} target="_blank" rel="noreferrer"><MessageCircle size={16}/> Fale conosco</a>
         </div>
       </header>
 
-      <section className="hero maria-hero" id="inicio">
-        <div className="hero-glow"/>
-        <div className="container hero-grid">
-          <div className="hero-copy center-hero">
-            <img className="hero-brand-logo" src={logoNaama.url} alt="Clínica Domiciliar Naamã — Cuidado especializado que transforma" />
-            <h1>Feridas e pé diabético exigem <em>cuidado especializado.</em></h1>
-            <p className="hero-lead">A Clínica Naamã oferece cuidado especializado para feridas e pé diabético, com avaliação individual, curativos e atenção às necessidades de cada pessoa — inclusive no conforto da sua casa.</p>
-            <div className="hero-actions">
-              <button className="btn btn-primary" onClick={() => goWhatsapp("conversar sobre meu caso")}><MessageCircle size={18}/> Agendar uma avaliação</button>
-              <a className="btn btn-outline" href="#tratamentos">Conhecer os atendimentos <ArrowRight size={17}/></a>
+      <section className="aconchego-hero" id="inicio">
+        <div className="aconchego-hero-shape shape-one"/><div className="aconchego-hero-shape shape-two"/>
+        <div className="container aconchego-hero-grid">
+          <div className="aconchego-hero-copy">
+            <span className="aconchego-eyebrow"><Sparkles size={15}/> CUIDADO COM CARINHO, TODOS OS DIAS</span>
+            <h1>Mais que um lar,<br/><em>uma família.</em></h1>
+            <p>Um lugar para viver com acolhimento, cuidado profissional e momentos que fazem bem. No Residencial Aconchego dos Avós, cada pessoa é recebida com respeito, atenção e muito carinho.</p>
+            <div className="aconchego-hero-actions">
+              <a className="aconchego-btn aconchego-btn-primary" href={contact("Olá! Quero saber mais sobre o Residencial Aconchego dos Avós.")} target="_blank" rel="noreferrer"><MessageCircle size={18}/> Converse com nossa equipe</a>
+              <a className="aconchego-btn aconchego-btn-ghost" href="#sobre">Conheça nosso espaço <ArrowRight size={17}/></a>
             </div>
-            <div className="hero-trust"><span><Check size={15}/> Avaliação individual</span><span><Check size={15}/> Atendimento humanizado</span><span><Check size={15}/> Cuidado especializado</span></div>
+            <div className="aconchego-trust"><span><Check size={16}/> Atenção individual</span><span><Check size={16}/> Equipe de cuidado</span><span><Check size={16}/> Ambiente acolhedor</span></div>
+          </div>
+          <div className="aconchego-hero-visual">
+            <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=90" alt="Quarto confortável e acolhedor" fetchPriority="high"/>
+            <div className="aconchego-photo-note"><span className="note-icon"><Heart size={19}/></span><span><strong>Um novo capítulo, com carinho</strong><small>Bem-estar em cada detalhe</small></span></div>
+            <div className="aconchego-round-stamp"><Flower2 size={24}/><span>AFETO</span><small>e cuidado</small></div>
           </div>
         </div>
       </section>
 
-      <div className="info-marquee" aria-label="Áreas de atendimento"><div className="marquee-track">{[1,2].map(n=><div className="marquee-group" key={n}><span>✦ FERIDAS AGUDAS E CRÔNICAS</span><span>✦ PÉ DIABÉTICO</span><span>✦ CURATIVOS ESPECIALIZADOS</span><span>✦ LESÕES POR PRESSÃO</span><span>✦ ÚLCERAS VASCULARES</span><span>✦ ATENDIMENTO DOMICILIAR</span><span>✦ CUIDADO INDIVIDUALIZADO</span></div>)}</div></div>
+      <div className="aconchego-ribbon" aria-label="Diferenciais do residencial"><div className="aconchego-ribbon-track">{[1,2].map(n=><div className="aconchego-ribbon-group" key={n}><span>♡ ACOLHIMENTO</span><span>✿ CUIDADO PROFISSIONAL</span><span>♡ CONVIVÊNCIA</span><span>✿ MAIS QUALIDADE DE VIDA</span><span>♡ MAIS QUE UM LAR, UMA FAMÍLIA</span></div>)}</div></div>
 
-      <section className="section intro-section" id="sobre"><div className="container intro-grid"><div className="intro-illustration maria-profile-photo photo-placeholder" role="img" aria-label="Espaço reservado para foto de Fátima"><span>FOTO</span><small>Imagem de Fátima</small></div><div className="intro-copy"><span className="eyebrow">PRAZER, SOU FÁTIMA</span><h2>Cuidado especializado, com atenção à pessoa por <em>inteiro.</em></h2><p>Na Clínica Naamã, cada atendimento começa com escuta e avaliação cuidadosa. O plano de cuidado considera as características da ferida, o histórico de saúde e as necessidades individuais, com orientações claras para a pessoa e sua família.</p><p>Nosso compromisso é oferecer um cuidado acolhedor, responsável e individualizado, com atenção à segurança e à dignidade de cada pessoa.</p><button className="btn btn-primary" onClick={() => goWhatsapp("conhecer o atendimento de enfermagem")}><MessageCircle size={18}/> conhecer o atendimento</button></div></div></section>
+      <section className="aconchego-section aconchego-about" id="sobre">
+        <div className="container aconchego-about-grid">
+          <div className="aconchego-about-image"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1100&q=85" alt="Sala iluminada e confortável" loading="lazy"/><div className="aconchego-image-badge"><Sun size={20}/><span><strong>Um ambiente de paz</strong><small>Para se sentir em casa</small></span></div></div>
+          <div className="aconchego-copy"><span className="aconchego-eyebrow">SEJA BEM-VINDO À NOSSA CASA</span><h2>Uma rotina com cuidado, <em>respeito e afeto.</em></h2><p>Sabemos que escolher um residencial para alguém querido é uma decisão importante. Por isso, nosso compromisso é oferecer um ambiente acolhedor, com uma equipe preparada para acompanhar a rotina e olhar para cada pessoa com atenção e dignidade.</p><p>Aqui, o cuidado vai além das necessidades diárias: valorizamos a convivência, os vínculos, o conforto e os pequenos momentos que tornam cada dia especial.</p><div className="aconchego-pills"><span><Heart size={15}/> Carinho de família</span><span><ShieldCheck size={15}/> Cuidado e segurança</span><span><Leaf size={15}/> Bem-estar</span></div><a className="aconchego-btn aconchego-btn-primary" href={contact("Olá! Gostaria de agendar uma visita ao residencial.")} target="_blank" rel="noreferrer"><MessageCircle size={18}/> Quero conhecer o residencial</a></div>
+        </div>
+      </section>
 
-      <section className="section pain-section"><div className="container narrow center"><span className="eyebrow">QUANDO PROCURAR APOIO</span><h2>Feridas persistentes e alterações nos pés merecem <em>atenção especializada.</em></h2><p>Feridas que não cicatrizam, lesões nos pés de pessoas com diabetes e alterações na pele precisam de atenção. A avaliação profissional ajuda a orientar o cuidado e identificar quando é necessário encaminhamento ou atuação conjunta com outros profissionais.</p><div className="check-list centered-list"><div><Check size={17}/><span>Você ou alguém da família precisa de cuidado para uma ferida aguda ou crônica.</span></div><div><Check size={17}/><span>Você tem diabetes e percebeu uma lesão, fissura ou alteração nos pés.</span></div><div><Check size={17}/><span>A ferida persiste, apresenta mudanças ou precisa de curativos especializados.</span></div></div><button className="btn btn-primary" onClick={() => goWhatsapp("tirar dúvidas sobre o cuidado de uma ferida")}><MessageCircle size={18}/> Quero tirar minhas dúvidas</button></div></section>
-
-      <section className="section procedures-section" id="tratamentos"><div className="container"><div className="section-heading center"><span className="eyebrow">CUIDADOS DA CLÍNICA NAAMÃ</span><h2>Atenção especializada para cuidar de feridas com responsabilidade.</h2><p>Conheça os cuidados oferecidos pela Clínica Naamã. A conduta é definida de forma individual, conforme a avaliação e as necessidades de cada pessoa.</p></div><div className="procedure-window"><div className="procedure-track">{[...services,...services].map(({title,text,image,icon:Icon},i)=><article className="procedure-card maria-service-card" key={`${title}-${i}`}><img className="procedure-photo" src={image} alt={title} loading={i<services.length?"eager":"lazy"}/><div className="procedure-content"><div className="procedure-icon"><Icon size={21}/></div><h3>{title}</h3><p>{text}</p></div></article>)}</div></div><div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("saber qual atendimento pode ser adequado para mim")}><MessageCircle size={18}/> Consultar sobre meu caso</button></div></div></section>
-
-
-
-
-
-      <section className="section how-section" id="como-funciona"><div className="container"><div className="section-heading center"><span className="eyebrow">COMO FUNCIONA</span><h2>Um caminho de cuidado em <em>quatro etapas.</em></h2><p>Da primeira conversa ao acompanhamento, cada etapa é conduzida com atenção, clareza e respeito.</p></div><div className="steps-grid">{[["01","Primeiro contato","Você explica brevemente o que está acontecendo e tira suas primeiras dúvidas."],["02","Avaliação","São consideradas a ferida, seu histórico e os fatores relevantes para o cuidado."],["03","Plano individual","As possibilidades de cuidado e orientações são explicadas com clareza."],["04","Acompanhamento","O cuidado é revisto conforme a evolução e a necessidade de cada caso."]].map(([n,t,d])=><article className="step-card" key={n}><span className="step-number">{n}</span><div><h3>{t}</h3><p>{d}</p></div></article>)}</div><div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("iniciar uma conversa sobre atendimento")}><MessageCircle size={18}/> Iniciar uma conversa</button></div></div></section>
-
-<section className="section video-testimonials-section" id="depoimentos-em-video">
+      <section className="aconchego-section aconchego-care" id="cuidados">
         <div className="container">
-          <div className="section-heading center">
-            <span className="eyebrow">HISTÓRIAS DE CUIDADO</span>
-            <h2>Depoimentos em vídeo, com histórias de <em>acolhimento.</em></h2>
-            <p>Este espaço está preparado para receber vídeos de pacientes que desejem compartilhar sua experiência, sempre com autorização expressa.</p>
-          </div>
-          <div className="video-testimonials-grid">
-            {[
-              ["Experiência de cuidado","Vídeo de depoimento a adicionar"],
-              ["Acompanhamento de feridas","Vídeo de depoimento a adicionar"],
-              ["Cuidado no dia a dia","Vídeo de depoimento a adicionar"]
-            ].map(([title,caption])=><article className="video-testimonial-card" key={title}>
-              <div className="video-testimonial-placeholder"><span className="video-play" aria-hidden="true">▶</span><span className="video-placeholder-label">VÍDEO</span></div>
-              <div className="video-testimonial-copy"><h3>{title}</h3><p>{caption}</p></div>
-            </article>)}
-          </div>
+          <div className="aconchego-section-heading"><span className="aconchego-eyebrow">CUIDADO EM CADA DETALHE</span><h2>Uma equipe presente para <em>cuidar de verdade.</em></h2><p>Profissionais e serviços que apoiam o bem-estar, a rotina e as necessidades individuais de quem mora conosco.</p></div>
+          <div className="aconchego-care-grid">{careServices.map(({icon:Icon,title,text},i)=><article className="aconchego-care-card" key={title}><span className="aconchego-care-number">{String(i+1).padStart(2,"0")}</span><div className="aconchego-care-icon"><Icon size={24}/></div><h3>{title}</h3><p>{text}</p></article>)}</div>
+          <div className="aconchego-care-note"><Heart size={20}/><p><strong>O cuidado é feito de presença.</strong> Cada residente tem sua história, seus hábitos e suas necessidades. Nosso olhar é para a pessoa por inteiro.</p></div>
         </div>
       </section>
 
-<section className="section before-after-section" id="antes-depois">
+      <section className="aconchego-section aconchego-environment" id="ambientes">
         <div className="container">
-          <div className="section-heading center">
-            <span className="eyebrow">ACOMPANHAMENTO</span>
-            <h2>Antes e depois: cada etapa merece <em>atenção.</em></h2>
-            <p>Registros de acompanhamento de feridas publicados com autorização da pessoa atendida. Cada caso é único e os resultados variam conforme as condições individuais e o plano de cuidado.</p>
-          </div>
-          <div className="before-after-grid">
-            {beforeAfterCases.map((item) => (
-              <article className={`before-after-card ba-${item.slot}`} key={item.title}>
-                {item.single ? (
-                  <div className="before-after-stack">
-                    <div className="before-after-photo before-after-full" style={item.aspect ? { aspectRatio: item.aspect } : undefined}>
-                      <img src={item.single} alt={`Registro de acompanhamento: ${item.title}`} loading="lazy" />
-                      {item.panels && <><span className="before-after-label">ANTES</span><span className="before-after-label after-label before-after-label-right">DEPOIS</span></>}
-                    </div>
-                    <div className="before-after-card-copy">
-                      <h3>{item.title}</h3>
-                      <p>{item.description}</p>
-                    </div>
-                  </div>
-                ) : (
-                  <>
-                    <div className="before-after-images">
-                      <div className="before-after-photo">
-                        <span className="before-after-label">ANTES</span>
-                        <img src={item.before} alt={`${item.title} — antes`} loading="lazy" />
-                      </div>
-                      <div className="before-after-photo">
-                        <span className="before-after-label after-label">DEPOIS</span>
-                        <img src={item.after} alt={`${item.title} — depois`} loading="lazy" />
-                      </div>
-                    </div>
-                    <div className="before-after-card-copy">
-                      <h3>{item.title}</h3>
-                      <p>{item.description}</p>
-                    </div>
-                  </>
-                )}
-              </article>
-            ))}
-          </div>
-          <div className="section-action center">
-            <button className="btn btn-primary" onClick={() => goWhatsapp("conhecer o acompanhamento e tirar dúvidas")}><MessageCircle size={18}/> Tirar dúvidas sobre o acompanhamento</button>
-          </div>
+          <div className="aconchego-section-heading"><span className="aconchego-eyebrow">NOSSO ESPAÇO</span><h2>Um ambiente que convida a <em>ficar à vontade.</em></h2><p>Conheça um pouco da atmosfera que queremos proporcionar: conforto, tranquilidade e espaços para conviver. As imagens abaixo são referências ilustrativas; substitua-as pelas fotos reais do residencial para mostrar fielmente cada ambiente.</p></div>
+          <div className="aconchego-gallery">{gallery.map((item,i)=><article className={`aconchego-gallery-card gallery-card-${i+1}`} key={item.title}><img src={item.image} alt={item.title} loading="lazy"/><div className="aconchego-gallery-overlay"><span>0{i+1} · NOSSO RESIDENCIAL</span><h3>{item.title}</h3><p>{item.description}</p></div></article>)}</div>
+          <div className="aconchego-amenities"><span><House size={18}/> Pátio amplo e monitorado</span><span><WashingMachine size={18}/> Lavanderia própria</span><span><Tv size={18}/> TV a cabo</span><span><Wifi size={18}/> Wi-Fi</span></div>
         </div>
       </section>
 
-      <section className="section maria-reviews-section" id="avaliacoes">
-        <div className="maria-reviews-full">
-          <div className="section-heading center">
-            <span className="eyebrow">AVALIAÇÕES</span>
-            <h2>Um cuidado que começa com <em>acolhimento.</em></h2>
-            <p>O que dizem as pessoas que confiaram seus cuidados à Clínica Naamã.</p>
-          </div>
-          <div className="maria-reviews-window">
-            <div className="maria-reviews-track">
-              {[
-                {name:"Mariana S.",text:"O curativo foi feito com muito cuidado e sem dor. Em poucas semanas a ferida da minha mãe já estava fechando."},
-                {name:"Carlos R.",text:"Tratei uma ferida no pé diabético que não cicatrizava há meses. As orientações fizeram toda a diferença."},
-                {name:"Patrícia M.",text:"Atendimento em casa com toda a atenção. Os curativos do meu pai na lesão por pressão melhoraram muito."},
-                {name:"João P.",text:"Explicou cada etapa do tratamento da úlcera na perna. Me senti seguro e bem cuidado."},
-                {name:"Ana L.",text:"Curativos especializados e muito carinho. A cicatrização foi mais rápida do que eu esperava."},
-                {name:"Mariana S.",text:"O curativo foi feito com muito cuidado e sem dor. Em poucas semanas a ferida da minha mãe já estava fechando."},
-                {name:"Carlos R.",text:"Tratei uma ferida no pé diabético que não cicatrizava há meses. As orientações fizeram toda a diferença."},
-                {name:"Patrícia M.",text:"Atendimento em casa com toda a atenção. Os curativos do meu pai na lesão por pressão melhoraram muito."},
-                {name:"João P.",text:"Explicou cada etapa do tratamento da úlcera na perna. Me senti seguro e bem cuidado."},
-                {name:"Ana L.",text:"Curativos especializados e muito carinho. A cicatrização foi mais rápida do que eu esperava."}
-              ].map((review,i)=><article className="maria-review-card" key={i}>
-                <div className="review-stars" aria-label="5 estrelas">★★★★★</div>
-                <p>“{review.text}”</p>
-                <div className="maria-review-author"><span className="maria-review-avatar review-avatar-blank" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.3-6.8 8.5-6.8s7.7 2.4 8.5 6.8z"/></svg></span><span>{review.name}<small>Paciente</small></span></div>
-              </article>)}
-            </div>
-          </div>
+      <section className="aconchego-section aconchego-video-section" id="videos">
+        <div className="container aconchego-video-layout">
+          <div className="aconchego-copy"><span className="aconchego-eyebrow">VEJA DE PERTO</span><h2>Um pedacinho do nosso dia a <em>dia.</em></h2><p>Este espaço foi preparado para você adicionar vídeos do residencial, apresentar os ambientes, mostrar atividades e compartilhar um pouco da rotina. Assim, as famílias podem conhecer melhor nosso jeito de cuidar.</p><a className="aconchego-btn aconchego-btn-primary" href={contact("Olá! Gostaria de receber mais informações e vídeos do Residencial Aconchego dos Avós.")} target="_blank" rel="noreferrer"><MessageCircle size={18}/> Peça mais informações</a></div>
+          <div className="aconchego-video-grid"><article className="aconchego-video-placeholder"><div className="aconchego-video-screen"><PlayCircle size={54}/><span>ADICIONE SEU VÍDEO</span></div><div className="aconchego-video-caption"><strong>Conheça o residencial</strong><small>Apresentação dos espaços e instalações</small></div></article><article className="aconchego-video-placeholder"><div className="aconchego-video-screen video-screen-alt"><PlayCircle size={46}/><span>ADICIONE SEU VÍDEO</span></div><div className="aconchego-video-caption"><strong>Um pouco da nossa rotina</strong><small>Atividades e momentos de convivência</small></div></article></div>
         </div>
       </section>
 
-      <section className="section benefits-section"><div className="container"><div className="section-heading center"><span className="eyebrow">NOSSO COMPROMISSO</span><h2>Informação clara, acolhimento e <em>responsabilidade.</em></h2></div><div className="benefit-grid maria-benefits"><article><span>01</span><HeartPulse/><h3>Olhar individualizado</h3><p>Cada pessoa e cada ferida têm características próprias que precisam ser consideradas.</p></article><article><span>02</span><ShieldCheck/><h3>Segurança em primeiro lugar</h3><p>As condutas consideram avaliação, critérios profissionais e necessidades clínicas.</p></article><article><span>03</span><Stethoscope/><h3>Orientação responsável</h3><p>Você recebe informações claras sobre cuidados, possibilidades e próximos passos.</p></article><article><span>04</span><CircleCheck/><h3>Cuidado em conjunto</h3><p>Quando necessário, o acompanhamento considera a atuação integrada com outros profissionais.</p></article></div></div></section>
+      <section className="aconchego-section aconchego-special">
+        <div className="container aconchego-special-card"><div className="aconchego-special-icon"><Users size={31}/></div><div><span className="aconchego-eyebrow">TAMBÉM RECEBEMOS</span><h2>Cuidado também para pessoas em <em>recuperação.</em></h2><p>Aceitamos pacientes em recuperação com menos de 60 anos, em alas separadas. Converse com nossa equipe para explicar a situação, entender as possibilidades de acolhimento e confirmar a disponibilidade.</p></div><a className="aconchego-btn aconchego-btn-white" href={contact("Olá! Gostaria de consultar sobre acolhimento para paciente em recuperação com menos de 60 anos.")} target="_blank" rel="noreferrer"><MessageCircle size={18}/> Consultar disponibilidade</a></div>
+      </section>
 
-      <section className="section maria-location-section" id="localizacao"><div className="container maria-location-grid"><div><span className="eyebrow">LOCALIZAÇÃO</span><h2>Vamos encontrar o melhor caminho para o seu <em>atendimento.</em></h2><p>Endereço em breve. Por enquanto, atendemos em São Paulo — entre em contato para confirmar a disponibilidade.</p><button className="btn btn-primary" onClick={() => goWhatsapp("consultar endereço e disponibilidade de atendimento")}><MessageCircle size={18}/> Consultar localização pelo WhatsApp</button><p className="maria-map-note">Endereço completo em breve.</p></div><div className="maria-map-frame"><iframe title="Mapa de São Paulo" src="https://maps.google.com/maps?q=S%C3%A3o%20Paulo%2C%20SP%2C%20Brasil&t=&z=12&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen /></div></div></section>
+      <section className="aconchego-section aconchego-values">
+        <div className="container"><div className="aconchego-section-heading"><span className="aconchego-eyebrow">O QUE VALORIZAMOS</span><h2>Porque todo mundo merece se sentir <em>em casa.</em></h2></div><div className="aconchego-values-grid"><article><span><HeartHandshake size={25}/></span><h3>Afeto</h3><p>Tratamos cada pessoa com respeito, paciência e carinho.</p></article><article><span><ShieldCheck size={25}/></span><h3>Atenção</h3><p>Uma equipe presente para acompanhar a rotina e os cuidados.</p></article><article><span><Flower2 size={25}/></span><h3>Convivência</h3><p>Espaço para compartilhar histórias, atividades e bons momentos.</p></article><article><span><Sparkles size={25}/></span><h3>Dignidade</h3><p>Valorizamos a individualidade e a história de cada residente.</p></article></div></div>
+      </section>
 
+      <section className="aconchego-section aconchego-faq" id="duvidas"><div className="container aconchego-faq-layout"><div className="aconchego-copy"><span className="aconchego-eyebrow">PERGUNTAS FREQUENTES</span><h2>Vamos conversar sobre o que é importante para <em>sua família?</em></h2><p>Estamos aqui para ouvir, orientar e ajudar você a conhecer melhor o residencial.</p><a className="aconchego-btn aconchego-btn-primary" href={contact("Olá! Tenho algumas dúvidas sobre o residencial.")} target="_blank" rel="noreferrer"><MessageCircle size={18}/> Tirar minhas dúvidas</a></div><div className="aconchego-faq-list">{faqs.map(([q,a],i)=><div className={openFaq===i?"aconchego-faq-item is-open":"aconchego-faq-item"} key={q}><button onClick={()=>setOpenFaq(openFaq===i?null:i)} aria-expanded={openFaq===i}><span>{q}</span><ChevronDown size={19}/></button>{openFaq===i&&<div className="aconchego-faq-answer"><p>{a}</p></div>}</div>)}</div></div></section>
 
-      <section className="section faq-section" id="duvidas"><div className="container faq-layout"><div className="faq-intro"><span className="eyebrow">PERGUNTAS FREQUENTES</span><h2>Suas dúvidas também <em>fazem parte do cuidado.</em></h2><p>Se não encontrar sua pergunta aqui, fale com a equipe da Clínica Naamã pelo WhatsApp.</p><button className="btn btn-primary" onClick={() => goWhatsapp("tirar uma dúvida")}><MessageCircle size={18}/> Tirar uma dúvida</button></div><div className="faq-list">{faqs.map(([q,a],i)=><div className={openFaq===i?"faq-item active":"faq-item"} key={q}><button onClick={() => setOpenFaq(openFaq===i?null:i)} aria-expanded={openFaq===i}><span>{q}</span><ChevronDown size={18}/></button>{openFaq===i&&<div className="faq-answer"><p>{a}</p></div>}</div>)}</div></div></section>
+      <section className="aconchego-final-cta"><div className="container"><span className="aconchego-eyebrow"><Heart size={15}/> SERÁ UM PRAZER RECEBER VOCÊ</span><h2>O próximo passo pode ser uma visita.<br/><em>Vamos nos conhecer?</em></h2><p>Fale com nossa equipe, tire suas dúvidas e conheça as possibilidades de acolhimento no Residencial Aconchego dos Avós.</p><a className="aconchego-btn aconchego-btn-primary" href={contact("Olá! Quero conversar com a equipe e conhecer o Residencial Aconchego dos Avós.")} target="_blank" rel="noreferrer"><MessageCircle size={18}/> Falar pelo WhatsApp</a></div></section>
 
-      <section className="section final-cta maria-final"><div className="final-glow"/><div className="container narrow center"><span className="eyebrow">VAMOS CONVERSAR?</span><h2>O próximo passo começa com uma conversa.</h2><p>Entre em contato para compartilhar sua necessidade e receber informações sobre o cuidado especializado com feridas e pé diabético.</p><button className="btn btn-primary" onClick={() => goWhatsapp("conversar sobre atendimento")}><MessageCircle size={18}/> Falar com a equipe pelo WhatsApp</button></div></section>
-
-      <footer className="footer maria-footer"><div className="container footer-grid"><div className="footer-brand"><img className="footer-logo" src={logoNaama.url} alt="Clínica Domiciliar Naamã" loading="lazy"/><p>Cuidado especializado para feridas, pé diabético e curativos, com atenção individualizada.</p></div><div><h4>Navegação</h4><a href="#sobre">Sobre a clínica</a><a href="#tratamentos">Áreas de atuação</a><a href="#como-funciona">Como funciona</a><a href="#duvidas">Perguntas frequentes</a></div><div><h4>Contato</h4><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={14}/> +55 (12) 98829-8061</a><span><ShieldCheck size={14}/> Cuidado responsável e individualizado</span></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Clínica Naamã.</span><span>Feridas • Pé diabético • Curativos especializados</span></div></footer>
-
-      <a className="floating-wa maria-floating-wa" href={WHATSAPP} target="_blank" rel="noreferrer" aria-label="Falar com a equipe pelo WhatsApp"><img src="/whatsapp-flutuante/image.png" alt="" /><span>WhatsApp</span></a>
+      <footer className="aconchego-footer"><div className="container aconchego-footer-grid"><div className="aconchego-footer-brand"><a className="aconchego-brand" href="#inicio"><span className="aconchego-brand-icon"><HeartHandshake size={25}/></span><span><strong>Aconchego dos Avós</strong><small>RESIDENCIAL • CUIDADO • FAMÍLIA</small></span></a><p>Mais que um lar, uma família. Acolhimento, cuidado e respeito em cada etapa da vida.</p></div><div><h4>Explore</h4><a href="#sobre">Nossa casa</a><a href="#cuidados">Cuidados</a><a href="#ambientes">Ambientes</a><a href="#videos">Vídeos</a></div><div><h4>Contato</h4><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={16}/> +55 51 9902-1329</a><span><Heart size={16}/> Mais que um lar, uma família</span></div></div><div className="container aconchego-footer-bottom"><span>© {new Date().getFullYear()} Residencial Aconchego dos Avós.</span><span>Feito com carinho para acolher.</span></div></footer>
+      <a className="aconchego-floating-wa" href={contact("Olá! Vim pelo site do Residencial Aconchego dos Avós e gostaria de mais informações.")} target="_blank" rel="noreferrer" aria-label="Falar com o residencial pelo WhatsApp"><MessageCircle size={23}/><span>Fale conosco</span></a>
     </main>
   );
 }
