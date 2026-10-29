@@ -7,6 +7,8 @@ import tecnicos24Horas from "@/assets/tecnicos-24-horas.jpg.asset.json";
 import cuidadoras from "@/assets/cuidadoras.jpg.asset.json";
 import nutricionista from "@/assets/nutricionista.jpg.asset.json";
 import atividadesSemanais from "@/assets/atividades-semanais.jpg.asset.json";
+import fisioterapia from "@/assets/fisioterapia.png.asset.json";
+import ambienteAcolhedor from "@/assets/ambiente-acolhedor.png.asset.json";
 import {
   Activity, ArrowRight, Bandage, CalendarDays, Check, ChevronDown, CircleCheck, Heart, HeartHandshake, HeartPulse, House, MessageCircle, ShieldCheck, Stethoscope, Tv, Users, Utensils, WashingMachine, Wifi,
 } from "lucide-react";
@@ -36,8 +38,8 @@ const services = [
   { title: "Cuidadoras", image: cuidadoras.url, text: "Apoio nas atividades diárias com respeito, paciência, atenção e afeto.", icon: Heart },
   { title: "Nutricionista", image: nutricionista.url, text: "Orientação nutricional para uma rotina alimentar planejada conforme as necessidades.", icon: Utensils },
   { title: "Atividades semanais", image: atividadesSemanais.url, text: "Atividades conduzidas por professora para estimular a convivência, a criatividade e o bem-estar.", icon: CalendarDays },
-  { title: "Fisioterapia", image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=85", text: "Acompanhamento voltado à mobilidade, funcionalidade e qualidade de vida.", icon: Activity },
-  { title: "Estrutura acolhedora", image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85", text: "Pátio amplo e monitorado, lavanderia própria, TV a cabo e Wi-Fi.", icon: House },
+  { title: "Fisioterapia", image: fisioterapia.url, text: "Acompanhamento voltado à mobilidade, funcionalidade e qualidade de vida.", icon: Activity },
+  { title: "Estrutura acolhedora", image: ambienteAcolhedor.url, text: "Pátio amplo e monitorado, lavanderia própria, TV a cabo e Wi-Fi.", icon: House },
 ];
 const faqs = [
   ["Quais cuidados estão incluídos?", "Contamos com médico geriátrico mensal, enfermeira padrão, técnicos 24 horas, cuidadoras, nutricionista, professora para atividades semanais e fisioterapia."],

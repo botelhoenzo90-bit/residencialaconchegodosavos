@@ -1113,3 +1113,17 @@ body,.jt-site{background:#fffdf9;color:#25384a}
 @media(max-width:760px){
   .aconchego-overrides .maria-hero{background:#f7f8f7!important}
 }
+
+/* Fotos integrais, com espaço para os cantos arredondados. */
+.aconchego-overrides .maria-service-card{
+  height:auto!important;
+}
+.aconchego-overrides .maria-service-card .procedure-photo{
+  width:calc(100% - 24px);
+  height:auto!important;
+  aspect-ratio:1 / 1;
+  flex:0 0 auto!important;
+  object-fit:contain;
+  border-radius:16px;
+  margin:12px 12px 0;
+}
