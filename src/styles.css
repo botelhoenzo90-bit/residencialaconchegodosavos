@@ -823,3 +823,188 @@ body,.jt-site{background:#fffdf9;color:#25384a}
 .aconchego-overrides .maria-footer{background:#23594e!important}
 .aconchego-overrides .aconchego-wordmark{color:#287b67}
 @media(max-width:760px){.aconchego-overrides .aconchego-values-grid{grid-template-columns:1fr;gap:13px}.aconchego-overrides .aconchego-welcome-section,.aconchego-overrides .aconchego-gallery-section{padding:48px 0}}
+
+
+/* Refinamento visual — paleta serena, alegre e profissional para o residencial */
+.aconchego-overrides{
+  --aco-sage:#eaf3ed;
+  --aco-green:#477b68;
+  --aco-deep:#294f42;
+  --aco-gold:#d7ad58;
+  --aco-cream:#fbfaf6;
+  --aco-text:#42564d;
+  --aco-line:#dce8df;
+}
+.aconchego-overrides .maria-hero{
+  background:#eaf3ed!important;
+  background-image:none!important;
+}
+.aconchego-overrides .maria-hero .hero-glow,
+.aconchego-overrides .maria-final .final-glow{
+  display:none!important;
+}
+.aconchego-overrides .maria-hero h1,
+.aconchego-overrides .section h2{
+  color:#294f42!important;
+}
+.aconchego-overrides .maria-hero h1 em,
+.aconchego-overrides .section h2 em{
+  color:#477b68!important;
+}
+.aconchego-overrides .hero-lead,
+.aconchego-overrides .section-heading p,
+.aconchego-overrides .intro-copy p{
+  color:#52665b!important;
+}
+.aconchego-overrides .eyebrow{
+  color:#477b68!important;
+}
+.aconchego-overrides .btn-primary,
+.aconchego-overrides .header-cta{
+  background:#477b68!important;
+  background-image:none!important;
+  border-color:#477b68!important;
+  color:#fff!important;
+  box-shadow:none!important;
+}
+.aconchego-overrides .btn-primary:hover,
+.aconchego-overrides .header-cta:hover{
+  background:#365f50!important;
+  border-color:#365f50!important;
+}
+.aconchego-overrides .info-marquee{
+  background:#477b68!important;
+  background-image:none!important;
+  border:0!important;
+}
+.aconchego-overrides .intro-section,
+.aconchego-overrides .benefits-section,
+.aconchego-overrides .video-testimonials-section,
+.aconchego-overrides .faq-section{
+  background:#fbfaf6!important;
+  background-image:none!important;
+}
+.aconchego-overrides .pain-section,
+.aconchego-overrides .how-section,
+.aconchego-overrides .maria-location-section,
+.aconchego-overrides .aconchego-welcome-section,
+.aconchego-overrides .aconchego-gallery-section{
+  background:#eaf3ed!important;
+  background-image:none!important;
+}
+.aconchego-overrides .pain-section h2,
+.aconchego-overrides .pain-section .eyebrow,
+.aconchego-overrides .how-section h2,
+.aconchego-overrides .maria-location-section h2{
+  color:#294f42!important;
+}
+.aconchego-overrides .pain-section .centered-list div{
+  background:#fff!important;
+  border:1px solid #dce8df!important;
+  box-shadow:none!important;
+}
+.aconchego-overrides .procedures-section{
+  background:#fff!important;
+  background-image:none!important;
+}
+.aconchego-overrides .maria-service-card{
+  background:#fff!important;
+  border:1px solid #dce8df!important;
+  border-radius:18px!important;
+  box-shadow:0 5px 18px rgba(41,79,66,.06)!important;
+}
+.aconchego-overrides .maria-service-card .procedure-icon,
+.aconchego-overrides .how-section .step-number{
+  background:#f5e9c9!important;
+  border-color:#ead9a9!important;
+  color:#477b68!important;
+}
+.aconchego-overrides .step-card{
+  background:#fff!important;
+  border:1px solid #dce8df!important;
+  box-shadow:none!important;
+}
+.aconchego-overrides .video-testimonial-card{
+  background:#fff!important;
+  border:1px solid #dce8df!important;
+  box-shadow:0 5px 18px rgba(41,79,66,.05)!important;
+}
+.aconchego-overrides .video-testimonial-placeholder{
+  background:#eaf3ed!important;
+  background-image:none!important;
+}
+.aconchego-overrides .video-play{
+  background:#477b68!important;
+}
+.aconchego-overrides .aconchego-welcome-section{
+  padding:64px 0!important;
+}
+.aconchego-overrides .aconchego-values-grid article,
+.aconchego-overrides .aconchego-values-grid article:nth-child(2),
+.aconchego-overrides .aconchego-values-grid article:nth-child(3){
+  background:#fff!important;
+  border:1px solid #dce8df!important;
+  border-radius:18px!important;
+  box-shadow:0 5px 18px rgba(41,79,66,.05)!important;
+}
+.aconchego-overrides .aconchego-values-grid article>span{
+  background:#f5e9c9!important;
+  color:#477b68!important;
+  border-radius:50%!important;
+}
+.aconchego-overrides .aconchego-values-grid h3{
+  color:#294f42!important;
+}
+.aconchego-overrides .aconchego-values-grid p{
+  color:#52665b!important;
+}
+.aconchego-overrides .aconchego-gallery-card{
+  background:#fff!important;
+  border:1px solid #dce8df!important;
+  border-radius:16px!important;
+  box-shadow:0 5px 18px rgba(41,79,66,.06)!important;
+}
+.aconchego-overrides .aconchego-gallery-card h3{
+  color:#294f42!important;
+}
+.aconchego-overrides .aconchego-amenities span{
+  background:#fff!important;
+  color:#365f50!important;
+  border:1px solid #dce8df!important;
+}
+.aconchego-overrides .benefit-grid article,
+.aconchego-overrides .benefit-grid article:nth-child(even){
+  background:#fff!important;
+  border:1px solid #dce8df!important;
+  border-radius:18px!important;
+  box-shadow:none!important;
+}
+.aconchego-overrides .faq-item{
+  background:#fff!important;
+  border-color:#dce8df!important;
+}
+.aconchego-overrides .maria-final{
+  background:#477b68!important;
+  background-image:none!important;
+}
+.aconchego-overrides .maria-footer{
+  background:#294f42!important;
+  background-image:none!important;
+}
+.aconchego-overrides .aconchego-wordmark{
+  color:#365f50!important;
+}
+.aconchego-overrides .maria-final h2,
+.aconchego-overrides .maria-final p,
+.aconchego-overrides .maria-final .eyebrow{
+  color:#fff!important;
+}
+.aconchego-overrides .maria-final .btn-primary{
+  background:#f5e9c9!important;
+  border-color:#f5e9c9!important;
+  color:#294f42!important;
+}
+@media(max-width:760px){
+  .aconchego-overrides .aconchego-welcome-section,
+  .aconchego-overrides .aconchego-gallery-section{padding:46px 0!important}
+}
