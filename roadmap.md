@@ -11,3 +11,4 @@
 - [x] Colocar as seis novas fotos na seção antes e depois
 - [x] Centralizar os tópicos da seção quando procurar apoio e quadrar a logomarca do rodapé
 - [x] Aplicar a logomarca do Aconchego dos Avós no topo, rodapé, favicon e compartilhamento
+- [x] Trocar as seis fotos do carrossel Cuidado em cada detalhe pelas novas imagens enviadas
