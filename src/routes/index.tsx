@@ -9,6 +9,16 @@ import nutricionista from "@/assets/nutricionista.jpg.asset.json";
 import atividadesSemanais from "@/assets/atividades-semanais.jpg.asset.json";
 import fisioterapia from "@/assets/fisioterapia.png.asset.json";
 import ambienteAcolhedor from "@/assets/ambiente-acolhedor.png.asset.json";
+import atividade01 from "@/assets/atividade-01.jpg.asset.json";
+import atividade02 from "@/assets/atividade-02.jpg.asset.json";
+import atividade03 from "@/assets/atividade-03.jpg.asset.json";
+import atividade04 from "@/assets/atividade-04.jpg.asset.json";
+import atividade05 from "@/assets/atividade-05.jpg.asset.json";
+import atividade06 from "@/assets/atividade-06.jpg.asset.json";
+import atividade07 from "@/assets/atividade-07.jpg.asset.json";
+import atividade08 from "@/assets/atividade-08.mp4.asset.json";
+import atividade09 from "@/assets/atividade-09.mp4.asset.json";
+import atividade10 from "@/assets/atividade-10.mp4.asset.json";
 import {
   Activity, ArrowRight, Bandage, CalendarDays, Check, ChevronDown, CircleCheck, Heart, HeartHandshake, HeartPulse, House, MessageCircle, ShieldCheck, Stethoscope, Tv, Users, Utensils, WashingMachine, Wifi,
 } from "lucide-react";
@@ -41,6 +51,7 @@ const services = [
   { title: "Fisioterapia", image: fisioterapia.url, text: "Acompanhamento voltado à mobilidade, funcionalidade e qualidade de vida.", icon: Activity },
   { title: "Estrutura acolhedora", image: ambienteAcolhedor.url, text: "Pátio amplo e monitorado, lavanderia própria, TV a cabo e Wi-Fi.", icon: House },
 ];
+const activityMedia = [{ type: "image", url: atividade01.url },{ type: "image", url: atividade02.url },{ type: "video", url: atividade08.url },{ type: "image", url: atividade03.url },{ type: "image", url: atividade04.url },{ type: "video", url: atividade09.url },{ type: "image", url: atividade05.url },{ type: "image", url: atividade06.url },{ type: "video", url: atividade10.url },{ type: "image", url: atividade07.url }];
 const faqs = [
   ["Quais cuidados estão incluídos?", "Contamos com médico geriátrico mensal, enfermeira padrão, técnicos 24 horas, cuidadoras, nutricionista, professora para atividades semanais e fisioterapia."],
   ["Recebem pacientes em recuperação com menos de 60 anos?", "Sim. Recebemos pacientes em recuperação com menos de 60 anos, em alas separadas. Consulte nossa equipe para conversar sobre as necessidades e disponibilidade."],
@@ -134,11 +145,11 @@ function Index() {
           <div className="aconchego-media-heading">
             <span className="eyebrow">NOSSA ROTINA DE PERTO</span>
             <h3>Momentos, atividades e <em>histórias reais.</em></h3>
-            <p>Em breve, este espaço também vai reunir registros das atividades, dos momentos especiais e dos vídeos do nosso dia a dia.</p>
+            <p>Registros das atividades, dos momentos especiais e do nosso dia a dia.</p>
           </div>
           <div className="aconchego-gallery-window aconchego-activities-window">
             <div className="aconchego-gallery-track aconchego-activities-track">
-              {["atividade-01.jpg","atividade-02.jpg","atividade-03.jpg","atividade-04.jpg","atividade-05.jpg","atividade-06.jpg"].concat(["atividade-01.jpg","atividade-02.jpg","atividade-03.jpg","atividade-04.jpg","atividade-05.jpg","atividade-06.jpg"]).map((file,i)=><article className="aconchego-media-card" key={file+"-"+i}><img src={"/atividades/"+file} alt={`Atividades e momentos no residencial ${i%6+1}`} loading="lazy" onError={(event)=>{event.currentTarget.style.display="none";event.currentTarget.parentElement?.classList.add("is-placeholder")}}/><span>{["Atividades e convivência","Momentos especiais","Cuidado no dia a dia","Oficinas e encontros","Bem-estar e companhia","Nossa rotina"][i%6]}</span></article>)}
+              {[...activityMedia,...activityMedia].map((item,i)=><article className="aconchego-media-card" key={item.url+"-"+i}>{item.type==="video"?<video src={item.url} autoPlay muted loop playsInline preload="metadata" aria-label={`Vídeo de atividades no residencial ${i%activityMedia.length+1}`}/>:<img src={item.url} alt={`Atividades e momentos no residencial ${i%activityMedia.length+1}`} loading="lazy"/>}</article>)}
             </div>
           </div>
           <div className="aconchego-amenities"><span><House size={17}/> Pátio amplo e monitorado</span><span><WashingMachine size={17}/> Lavanderia própria</span><span><Tv size={17}/> TV a cabo</span><span><Wifi size={17}/> Wi-Fi</span></div>
