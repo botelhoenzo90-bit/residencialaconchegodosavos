@@ -1390,3 +1390,4 @@ body,.jt-site{background:#fffdf9;color:#25384a}
 .aconchego-overrides .aconchego-gallery-section .aconchego-media-card{
   flex-shrink:0!important;
 }
+.intro-photo{display:block;width:100%;max-width:560px;height:auto;border-radius:20px;margin:18px auto 20px;box-shadow:0 16px 40px -18px rgba(12,50,48,.35);object-fit:cover}
