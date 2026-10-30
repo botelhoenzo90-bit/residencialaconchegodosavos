@@ -8,6 +8,7 @@ import cuidadoras from "@/assets/cuidadoras.jpg.asset.json";
 import nutricionista from "@/assets/nutricionista.jpg.asset.json";
 import atividadesSemanais from "@/assets/atividades-semanais.jpg.asset.json";
 import fisioterapia from "@/assets/fisioterapia.png.asset.json";
+import entradaCasa from "@/assets/entrada-casa.jpg.asset.json";
 import ambienteAcolhedor from "@/assets/ambiente-acolhedor.png.asset.json";
 import atividade01 from "@/assets/atividade-01.jpg.asset.json";
 import atividade02 from "@/assets/atividade-02.jpg.asset.json";
